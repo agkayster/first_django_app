@@ -70,6 +70,28 @@ class Books extends Component {
     return filteredBooks
   }
 
+  genreBooks() {
+    const filterCheckBox = this.state.checkBoxState
+    const checkedOrNot = []
+    const genreBook = this.state.books.find(
+      (book) => book.title === this.state.title
+    )
+    if (!genreBook) return
+    return genreBook.genres.filter((genre) =>
+      checkedOrNot.push(genre.name === filterCheckBox)
+    )
+  }
+
+  currentGenres() {
+    const currentBook = this.state.books.find(
+      (book) => book.title === this.state.title
+    )
+    if (!currentBook) return
+    return currentBook.genres.map((genre) => (
+      <option key={genre.id}>{genre.name}</option>
+    ))
+  }
+
   render() {
     console.log(this.state.books)
     console.log(this.genreBooks())
@@ -80,8 +102,6 @@ class Books extends Component {
     const genreSelect = this.state.checkBoxState ? this.genreBooks() : null
 
     console.log(genreSelect)
-
-    console.log(this.filterBooks())
 
     const genreArr = []
 
@@ -100,27 +120,19 @@ class Books extends Component {
           </ul>
           <div className="control">
             <p className="menu-label Genre is-centered">Genres</p>
-            <p>
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-              Perferendis, illum recusandae cum voluptates ratione, aliquid
-              dolore voluptatem illo soluta facilis alias, aut expedita
-              repellendus iusto animi itaque eaque earum in.
-            </p>
 
             <div className="comedy">
               <label className="checkbox">
                 {this.state.books.map((book) => {
-                  return book.genres.map((genre) =>
-                    genreArr.push(
-                      <input
-                        key={genre.id}
-                        type="checkbox"
-                        checked={this.state.checkBoxState === genre.id}
-                        onChange={this.handleSort}
-                        value={genreSelect}
-                      />
-                    )
-                  )
+                  return book.genres.map((genre) => (
+                    <input
+                      key={genre.id}
+                      type="checkbox"
+                      checked={this.state.checkBoxState === genre.id}
+                      onChange={this.handleSort}
+                      value={genreSelect}
+                    />
+                  ))
                 })}
                 Comedy
               </label>
@@ -316,28 +328,6 @@ class Books extends Component {
 }
 
 export default Books
-
-// genreBooks() {
-//     const filterCheckBox = this.state.checkBoxState
-//     const checkedOrNot = []
-//     const genreBook = this.state.books.find(
-//       (book) => book.title === this.state.title
-//     )
-//     if (!genreBook) return
-//     return genreBook.genres.filter((genre) =>
-//       checkedOrNot.push(genre.name === filterCheckBox)
-//     )
-//   }
-
-//   currentGenres() {
-//     const currentBook = this.state.books.find(
-//       (book) => book.title === this.state.title
-//     )
-//     if (!currentBook) return
-//     return currentBook.genres.map((genre) => (
-//       <option key={genre.id}>{genre.name}</option>
-//     ))
-//   }
 
 // //we use a reduce method for the books array, using 2 arguments "genreArr" and 'book'
 //     const allgenre = this.state.books.reduce((genreArr, book) => {
