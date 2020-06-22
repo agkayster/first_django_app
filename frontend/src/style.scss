@@ -1,0 +1,85 @@
+@import url("https://fonts.googleapis.com/css?family=Merriweather&display=swap");
+
+$family-primary: "Merriweather";
+$primary: #9c7f0d;
+
+// $radius: 0;
+// $radius-small:0;
+// $radius-large:0;
+
+$column-gap: 0.75rem;
+$margin: 2rem;
+
+.menu {
+  height: 100%;
+  width: 160px;
+  position: fixed;
+  z-index: 1;
+  top: 1;
+  background-color: none;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+.menu-label {
+  padding: 5px 10px 0px 16px;
+  margin-left: 10px;
+  margin-top: 15px;
+}
+
+.menu-list {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 15px;
+  color: red;
+  display: block;
+}
+
+.menu-list :hover {
+  color: red;
+}
+
+// .menu-labelPrices {
+//   padding: 0px 10px 0px 16px;
+//   margin-top: 25px;
+//   margin-bottom: 5px;
+//   margin-left: 20px;
+//   font-size: 14px;
+// }
+
+.section {
+  margin-left: 160px;
+  padding: 0px 10px;
+}
+
+.card {
+  overflow: hidden;
+  min-height: 100%;
+  position: relative;
+  box-shadow: 1px 1px 1px 1px #ffffff;
+  border: 1px solid transparent;
+  width: 250px;
+  margin: 20px 10px;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  // justify-content: space-between;
+}
+
+.columns {
+  display: grid;
+}
+
+// .select{
+//     margin: 0px 10px 0px 120px;
+// }
+
+.checkbox {
+  margin: 0px 20px;
+}
+
+.checkbox input {
+  margin: 0px 5px;
+}
+
+@import "bulma";

@@ -1,0 +1,140 @@
+[
+{
+  "model": "books.author",
+  "pk": 1,
+  "fields": {
+    "firstname": "Onuora",
+    "middlename": "",
+    "lastname": "Nzekwu"
+  }
+},
+{
+  "model": "books.author",
+  "pk": 2,
+  "fields": {
+    "firstname": "Chinua",
+    "middlename": "",
+    "lastname": "Achebe"
+  }
+},
+{
+  "model": "books.author",
+  "pk": 3,
+  "fields": {
+    "firstname": "Robert",
+    "middlename": "F",
+    "lastname": "Munsch"
+  }
+},
+{
+  "model": "books.author",
+  "pk": 4,
+  "fields": {
+    "firstname": "Tommy",
+    "middlename": "R.R",
+    "lastname": "Orange"
+  }
+},
+{
+  "model": "books.genre",
+  "pk": 1,
+  "fields": {
+    "name": "Comedy"
+  }
+},
+{
+  "model": "books.genre",
+  "pk": 2,
+  "fields": {
+    "name": "Horror"
+  }
+},
+{
+  "model": "books.genre",
+  "pk": 3,
+  "fields": {
+    "name": "Romance"
+  }
+},
+{
+  "model": "books.genre",
+  "pk": 4,
+  "fields": {
+    "name": "Fiction"
+  }
+},
+{
+  "model": "books.genre",
+  "pk": 5,
+  "fields": {
+    "name": "Sci-Fi"
+  }
+},
+{
+  "model": "books.genre",
+  "pk": 6,
+  "fields": {
+    "name": "Thriller"
+  }
+},
+{
+  "model": "books.book",
+  "pk": 1,
+  "fields": {
+    "title": "Eze goes to School",
+    "author": 1,
+    "image": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1389285032l/20498940.jpg",
+    "user": 1,
+    "genres": [
+      1,
+      4,
+      6
+    ]
+  }
+},
+{
+  "model": "books.book",
+  "pk": 2,
+  "fields": {
+    "title": "Things Fall Apart",
+    "author": 2,
+    "image": "https://2.bp.blogspot.com/-36EFf-W4Xrs/WOHhISjulOI/AAAAAAAAA5E/PL7Xr63vtFYulOuDPTk8zXLfKx-yB1KfQCLcB/s640/1.png",
+    "user": 1,
+    "genres": [
+      3,
+      4,
+      6
+    ]
+  }
+},
+{
+  "model": "books.book",
+  "pk": 3,
+  "fields": {
+    "title": "Love You Forever",
+    "author": 3,
+    "image": "https://upload.wikimedia.org/wikipedia/en/thumb/e/e5/LoveYouForever.png/220px-LoveYouForever.png",
+    "user": 2,
+    "genres": [
+      3,
+      4,
+      6
+    ]
+  }
+},
+{
+  "model": "books.book",
+  "pk": 4,
+  "fields": {
+    "title": "There There",
+    "author": 4,
+    "image": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1522275340l/39673556._SY475_.jpg",
+    "user": 2,
+    "genres": [
+      3,
+      5,
+      6
+    ]
+  }
+}
+]
