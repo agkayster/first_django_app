@@ -99,11 +99,17 @@ class Books extends Component {
 
     if (!this.state.books) return <h1>Please wait while loading...</h1>
 
-    const genreSelect = this.state.checkBoxState ? this.genreBooks() : null
+    const genreSelect = this.state.checkBoxState ? <label>Comedy</label> : null
 
-    console.log(genreSelect)
+    // console.log(genreSelect)
 
-    const genreArr = []
+    const genreArr = Array.from(
+      new Set(
+        this.state.books.map((book) => {
+          return book.genres.find((genre) => genre.id)
+        })
+      )
+    )
 
     return (
       <div>
@@ -121,24 +127,22 @@ class Books extends Component {
           <div className="control">
             <p className="menu-label Genre is-centered">Genres</p>
 
-            <div className="comedy">
-              <label className="checkbox">
-                {this.state.books.map((book) => {
-                  return book.genres.map((genre) => (
-                    <input
-                      key={genre.id}
-                      type="checkbox"
-                      checked={this.state.checkBoxState === genre.id}
-                      onChange={this.handleSort}
-                      value={genreSelect}
-                    />
-                  ))
-                })}
-                Comedy
-              </label>
-            </div>
+            {genreArr.map((genre, index) => (
+              <div key={index} className="comedy">
+                <label className="checkbox">
+                  <input
+                    type="checkbox"
+                    checked={this.state.checkBoxState === genre.id}
+                    onChange={this.handleSort}
+                  />
+                  {genre.name}
+                </label>
 
-            <div className="Fiction">
+                {/* {genreSelect} */}
+              </div>
+            ))}
+
+            {/* <div className="Fiction">
               <label className="checkbox">
                 <input
                   type="checkbox"
@@ -197,7 +201,7 @@ class Books extends Component {
                 />
                 Action
               </label>
-            </div>
+            </div> */}
           </div>
           <div className="control">
             <p className="menu-label is-centered">Prices(£)</p>
