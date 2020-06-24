@@ -9,7 +9,7 @@ class Books extends Component {
     super(props)
     this.state = {
       searchTerm: '',
-      checkBoxState: null,
+      checkBoxState: {},
       books: [],
       title: 'Eze goes to School'
     }
@@ -43,11 +43,12 @@ class Books extends Component {
     this.setState({ searchTerm: e.target.value })
   }
 
-  handleSort() {
+  handleSort(e) {
+    const checkboxes = { ...this.state.checkBoxState }
+
+    checkboxes[e.target.value] = e.target.checked
     this.setState({
-      checkBoxState: this.state.books.map((book) => {
-        return book.genres.map((genre) => genre.id)
-      })
+      checkBoxState: checkboxes
     })
   }
 
@@ -99,17 +100,17 @@ class Books extends Component {
 
     if (!this.state.books) return <h1>Please wait while loading...</h1>
 
-    const genreSelect = this.state.checkBoxState ? <label>Comedy</label> : null
+    // const genreSelect = this.state.checkBoxState ? <label>Comedy</label> : null
 
     // console.log(genreSelect)
 
-    const genreArr = Array.from(
-      new Set(
-        this.state.books.map((book) => {
-          return book.genres.find((genre) => genre.id)
-        })
-      )
-    )
+    // const genreArr = Array.from(
+    //   new Set(
+    //     this.state.books.map((book) => {
+    //       return book.genres.find((genre) => genre.id)
+    //     })
+    //   )
+    // )
 
     return (
       <div>
@@ -127,27 +128,25 @@ class Books extends Component {
           <div className="control">
             <p className="menu-label Genre is-centered">Genres</p>
 
-            {genreArr.map((genre, index) => (
-              <div key={index} className="comedy">
-                <label className="checkbox">
-                  <input
-                    type="checkbox"
-                    checked={this.state.checkBoxState === genre.id}
-                    onChange={this.handleSort}
-                  />
-                  {genre.name}
-                </label>
-
-                {/* {genreSelect} */}
-              </div>
-            ))}
-
-            {/* <div className="Fiction">
+            <div className="comedy">
               <label className="checkbox">
                 <input
                   type="checkbox"
                   checked={this.state.checkBoxState}
                   onChange={this.handleSort}
+                  value="comedy"
+                />
+                Comedy
+              </label>
+            </div>
+
+            <div className="Fiction">
+              <label className="checkbox">
+                <input
+                  type="checkbox"
+                  checked={this.state.checkBoxState}
+                  onChange={this.handleSort}
+                  value="fiction"
                 />
                 Fiction
               </label>
@@ -158,6 +157,7 @@ class Books extends Component {
                   type="checkbox"
                   checked={this.state.checkBoxState}
                   onChange={this.handleSort}
+                  value="horror"
                 />
                 Horror
               </label>
@@ -168,6 +168,7 @@ class Books extends Component {
                   type="checkbox"
                   checked={this.state.checkBoxState}
                   onChange={this.handleSort}
+                  value="thriller"
                 />
                 Thriller
               </label>
@@ -178,6 +179,7 @@ class Books extends Component {
                   type="checkbox"
                   checked={this.state.checkBoxState}
                   onChange={this.handleSort}
+                  value="romance"
                 />
                 Romance
               </label>
@@ -188,20 +190,22 @@ class Books extends Component {
                   type="checkbox"
                   checked={this.state.checkBoxState}
                   onChange={this.handleSort}
+                  value="sci-fi"
                 />
                 Sci-fi
               </label>
             </div>
-            <div className="Sci-fi">
+            <div className="Action">
               <label className="checkbox">
                 <input
                   type="checkbox"
                   checked={this.state.checkBoxState}
                   onChange={this.handleSort}
+                  value="action"
                 />
                 Action
               </label>
-            </div> */}
+            </div>
           </div>
           <div className="control">
             <p className="menu-label is-centered">Prices(£)</p>
@@ -332,6 +336,24 @@ class Books extends Component {
 }
 
 export default Books
+
+// function App() {
+//   return (
+//     <div id="colorlib-page">
+//       <div id="container-wrap">
+//         <Sidebar></Sidebar>
+//         <div id="colorlib-main">
+//           <Homepage />
+//           <Introduction></Introduction>
+//           <About></About>
+//           <Projects></Projects>
+//           <Blog></Blog>
+//           <Timeline></Timeline>
+//         </div>
+//       </div>
+//     </div>
+//   );
+// }
 
 // //we use a reduce method for the books array, using 2 arguments "genreArr" and 'book'
 //     const allgenre = this.state.books.reduce((genreArr, book) => {
