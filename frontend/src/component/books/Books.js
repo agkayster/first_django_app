@@ -46,9 +46,8 @@ class Books extends Component {
   handleSort(e) {
     const checkboxes = { ...this.state.checkBoxState }
 
-    checkboxes[e.target.value] = e.target.checked
     this.setState({
-      checkBoxState: checkboxes
+      checkBoxState: (checkboxes[e.target.value] = e.target.checked)
     })
   }
 
@@ -67,7 +66,7 @@ class Books extends Component {
     })
 
     this.genreBooks()
-    console.log(filteredBooks)
+    // console.log(filteredBooks)
     return filteredBooks
   }
 
@@ -132,7 +131,7 @@ class Books extends Component {
               <label className="checkbox">
                 <input
                   type="checkbox"
-                  checked={this.state.checkBoxState}
+                  checked={this.state.checkBoxState['comedy']}
                   onChange={this.handleSort}
                   value="comedy"
                 />
@@ -144,7 +143,7 @@ class Books extends Component {
               <label className="checkbox">
                 <input
                   type="checkbox"
-                  checked={this.state.checkBoxState}
+                  checked={this.state.checkBoxState['fiction']}
                   onChange={this.handleSort}
                   value="fiction"
                 />
@@ -155,7 +154,7 @@ class Books extends Component {
               <label className="checkbox">
                 <input
                   type="checkbox"
-                  checked={this.state.checkBoxState}
+                  checked={this.state.checkBoxState['horror']}
                   onChange={this.handleSort}
                   value="horror"
                 />
@@ -166,7 +165,7 @@ class Books extends Component {
               <label className="checkbox">
                 <input
                   type="checkbox"
-                  checked={this.state.checkBoxState}
+                  checked={this.state.checkBoxState['thriller']}
                   onChange={this.handleSort}
                   value="thriller"
                 />
@@ -177,7 +176,7 @@ class Books extends Component {
               <label className="checkbox">
                 <input
                   type="checkbox"
-                  checked={this.state.checkBoxState}
+                  checked={this.state.checkBoxState['romance']}
                   onChange={this.handleSort}
                   value="romance"
                 />
@@ -188,7 +187,7 @@ class Books extends Component {
               <label className="checkbox">
                 <input
                   type="checkbox"
-                  checked={this.state.checkBoxState}
+                  checked={this.state.checkBoxState['sci-fi']}
                   onChange={this.handleSort}
                   value="sci-fi"
                 />
@@ -199,7 +198,7 @@ class Books extends Component {
               <label className="checkbox">
                 <input
                   type="checkbox"
-                  checked={this.state.checkBoxState}
+                  checked={this.state.checkBoxState['action']}
                   onChange={this.handleSort}
                   value="action"
                 />
