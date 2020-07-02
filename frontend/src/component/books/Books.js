@@ -45,9 +45,9 @@ class Books extends Component {
 
   handleSort(e) {
     const checkboxes = { ...this.state.checkBoxState }
-
+    
     this.setState({
-      checkBoxState: (checkboxes[e.target.value] = e.target.checked)
+      checkBoxState: checkboxes[e.target.value] = e.target.checked
     })
   }
 
