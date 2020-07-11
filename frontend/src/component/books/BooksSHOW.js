@@ -72,7 +72,7 @@ class BooksShow extends Component {
                   {this.state.book && (
                     <div className="buttons">
                       <Link
-                        className="button" // Auth.isCurrentUser is linked to artistData and userData
+                        className="button"
                         to={`/books/${this.state.book._id}/edit`}
                       >
                         Edit
