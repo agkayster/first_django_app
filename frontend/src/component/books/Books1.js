@@ -2,6 +2,67 @@ import React, { Component } from 'react'
 import Axios from 'axios'
 import Card from '../common/Card'
 import { Link } from 'react-router-dom'
+import PriceCheckBox from './PriceCheckBox'
+import GenreCheckBox from './GenreCheckBox'
+
+const Genres = [
+  {
+    genreClass: 'Comedy',
+    value: 'comedy'
+  },
+  {
+    genreClass: 'Fiction',
+    value: 'fiction'
+  },
+  {
+    genreClass: 'Action',
+    value: 'action'
+  },
+  {
+    genreClass: 'Thriller',
+    value: 'thriller'
+  },
+  {
+    genreClass: 'Sci-fi',
+    value: 'sci-fi'
+  },
+  {
+    genreClass: 'Romance',
+    value: 'romance'
+  },
+  {
+    genreClass: 'Horror',
+    value: 'horror'
+  }
+]
+
+const Prices = [
+  {
+    priceClass: 'priceZero',
+    priceRange: { priceMax: 1.99, priceMin: 0 },
+    name: '0-1.99'
+  },
+  {
+    priceClass: 'priceOne',
+    priceRange: { priceMax: 2.99, priceMin: 2 },
+    name: '2-2.99'
+  },
+  {
+    priceClass: 'priceTwo',
+    priceRange: { priceMax: 3.99, priceMin: 3 },
+    name: '3-3.99'
+  },
+  {
+    priceClass: 'priceThree',
+    priceRange: { priceMax: 4.99, priceMin: 4 },
+    name: '4-4.99'
+  },
+  {
+    priceClass: 'priceFour',
+    priceRange: { priceMax: 5.99, priceMin: 5 },
+    name: '5-5.99'
+  }
+]
 
 class Books extends Component {
   constructor(props) {
@@ -124,151 +185,28 @@ class Books extends Component {
           </ul>
           <div className="control">
             <p className="menu-label Genre is-centered">Genres</p>
-            <div className="comedy">
-              <label className="checkbox">
-                <input
-                  type="checkbox"
-                  checked={this.state.checkBoxState['comedy'] || ''}
-                  onChange={(e) => this.handleSort(e)}
-                  value="comedy"
-                />
-                Comedy
-              </label>
-            </div>
-            <div className="Fiction">
-              <label className="checkbox">
-                <input
-                  type="checkbox"
-                  checked={this.state.checkBoxState['fiction'] || ''}
-                  onChange={this.handleSort}
-                  value="fiction"
-                />
-                Fiction
-              </label>
-            </div>
-            <div className="Horror">
-              <label className="checkbox">
-                <input
-                  type="checkbox"
-                  checked={this.state.checkBoxState['horror'] || ''}
-                  onChange={this.handleSort}
-                  value="horror"
-                />
-                Horror
-              </label>
-            </div>
-            <div className="Thriller">
-              <label className="checkbox">
-                <input
-                  type="checkbox"
-                  checked={this.state.checkBoxState['thriller'] || ''}
-                  onChange={this.handleSort}
-                  value="thriller"
-                />
-                Thriller
-              </label>
-            </div>
-            <div className="Romance">
-              <label className="checkbox">
-                <input
-                  type="checkbox"
-                  checked={this.state.checkBoxState['romance'] || ''}
-                  onChange={this.handleSort}
-                  value="romance"
-                />
-                Romance
-              </label>
-            </div>
-            <div className="Sci-fi">
-              <label className="checkbox">
-                <input
-                  type="checkbox"
-                  checked={this.state.checkBoxState['sci-fi'] || ''}
-                  onChange={this.handleSort}
-                  value="sci-fi"
-                />
-                Sci-fi
-              </label>
-            </div>
-            <div className="Action">
-              <label className="checkbox">
-                <input
-                  type="checkbox"
-                  checked={this.state.checkBoxState['action'] || ''}
-                  onChange={this.handleSort}
-                  value="action"
-                />
-                Action
-              </label>
-            </div>
+            {Genres.map((genre) => (
+              <GenreCheckBox
+                key={genre.value}
+                genreClass={genre.genreClass}
+                isChecked={this.state.checkBoxState[genre.value] || ''}
+                value={genre.value}
+                handleSort={this.handleSort}
+              />
+            ))}
           </div>
           <div className="control">
             <p className="menu-label is-centered">Prices(£)</p>
-            <div className="priceZero">
-              <label className="checkbox">
-                <input
-                  type="checkbox"
-                  name="0-1.99"
-                  checked={this.state.checkBoxState['0-1.99'] || ''}
-                  onChange={(e) =>
-                    this.handleSortPrice(e, { priceMax: 1.99, priceMin: 0 })
-                  }
-                />
-                0 - 1.99
-              </label>
-            </div>
-            <div className="priceOne">
-              <label className="checkbox">
-                <input
-                  type="checkbox"
-                  name="2-2.99"
-                  checked={this.state.checkBoxState['2-2.99'] || ''}
-                  onChange={(e) =>
-                    this.handleSortPrice(e, { priceMax: 2.99, priceMin: 2 })
-                  }
-                />
-                2 - 2.99
-              </label>
-            </div>
-            <div className="priceTwo">
-              <label className="checkbox">
-                <input
-                  type="checkbox"
-                  name="3-3.99"
-                  checked={this.state.checkBoxState['3-3.99'] || ''}
-                  onChange={(e) =>
-                    this.handleSortPrice(e, { priceMax: 3.99, priceMin: 3 })
-                  }
-                />
-                3 - 3.99
-              </label>
-            </div>
-            <div className="priceThree">
-              <label className="checkbox">
-                <input
-                  type="checkbox"
-                  checked={this.state.checkBoxState['4 - 4.99'] || ''}
-                  onChange={(e) =>
-                    this.handleSortPrice(e, { priceMax: 4.99, priceMin: 4 })
-                  }
-                  name="4 - 4.99"
-                />
-                4 - 4.99
-              </label>
-            </div>
-            <div className="priceFour">
-              <label className="checkbox">
-                <input
-                  type="checkbox"
-                  checked={this.state.checkBoxState['5 - 5.99'] || ''}
-                  onChange={(e) =>
-                    this.handleSortPrice(e, { priceMax: 5.99, priceMin: 5 })
-                  }
-                  name="5 - 5.99"
-                />
-                5 - 5.99
-              </label>
-            </div>
+            {Prices.map((price) => (
+              <PriceCheckBox
+                key={price.name}
+                priceClass={price.priceClass}
+                isChecked={this.state.checkBoxState[price.name] || ''}
+                priceRange={price.priceRange}
+                name={price.name}
+                handleSortPrice={this.handleSortPrice}
+              />
+            ))}
           </div>
         </aside>
         <section className="section">
