@@ -2,8 +2,6 @@ import React, { Component } from 'react'
 import Axios from 'axios'
 import Card from '../common/Card'
 import { Link } from 'react-router-dom'
-import { filter } from 'lodash'
-// import _ from 'lodash'
 
 class Books extends Component {
   constructor(props) {
@@ -11,32 +9,30 @@ class Books extends Component {
     this.state = {
       searchTerm: '',
       checkBoxState: {},
+      pricesToFilter: [],
       books: [],
+      filteredBooks: [],
       title: 'Eze goes to School'
     }
 
-    this.bookUpdate = this.bookUpdate.bind(this)
     this.handleBooks = this.handleBooks.bind(this)
     this.handleSearch = this.handleSearch.bind(this)
     this.handleSort = this.handleSort.bind(this)
     this.handleSortPrice = this.handleSortPrice.bind(this)
-    this.filterAll = this.filterAll.bind(this)
-    this.filterBooks = this.filterBooks.bind(this)
-    this.filterCheckBoxGenre = this.filterCheckBoxGenre.bind(this)
-    this.filterCheckboxPrice = this.filterCheckboxPrice.bind(this)
     this.currentGenres = this.currentGenres.bind(this)
+    this.bookUpdate = this.bookUpdate.bind(this)
   }
 
   componentDidMount() {
     this.bookUpdate()
     this.currentGenres()
-    this.filterAll()
-    // this.getbook()
   }
 
   bookUpdate() {
     Axios.get('/api/books')
-      .then((res) => this.setState({ books: res.data }))
+      .then((res) =>
+        this.setState({ books: res.data, filteredBooks: res.data })
+      )
       .catch((err) => console.log(err))
   }
 
@@ -45,104 +41,58 @@ class Books extends Component {
   }
 
   handleSearch(e) {
-    this.setState({ searchTerm: e.target.value })
-  }
-
-  handleSort(e) {
-    const checkboxes = { ...this.state.checkBoxState }
-
-    if (e.target.checked) {
-      checkboxes[e.target.value] = e.target.checked
-    } else {
-      delete checkboxes[e.target.value]
-    }
-    this.setState({
-      checkBoxState: checkboxes
-    })
-  }
-
-  handleSortPrice(e, value) {
-    const checkBoxState = {}
-
-    if (e.target.checked) {
-      checkBoxState[e.target.name] = value
-      this.setState({
-        checkBoxState: { ...checkBoxState }
-      })
-    } else {
-      this.setState({
-        checkBoxState: {}
-      })
-    }
-  }
-
-  filterBooks() {
-    const re = new RegExp(this.state.searchTerm, 'i')
-
-    let filteredBooks = this.state.books
-
-    filteredBooks = filteredBooks.filter((book) => {
+    const re = new RegExp(e.target.value, 'i')
+    const filteredBooks = this.state.books.filter((book) => {
       return (
         re.test(book.title) ||
         re.test(
-          `${book.author.firstname} ${book.author.middlename} ${book.author.lastname}`
+          `${book.author.firstName} ${book.author.middlename} ${book.author.lastName}`
         ) ||
         re.test(book.genres.map((genre) => genre.name)) ||
         re.test(book.price)
       )
     })
-
-    console.log(filteredBooks)
-
-    return filteredBooks
+    this.setState({ filteredBooks })
   }
 
-  filterCheckBoxGenre() {
-    let filteredCheckboxGenre = this.state.books
-    const cBState = this.state.checkBoxState
-
-    if (Object.keys(cBState).length > 0) {
-      filteredCheckboxGenre = this.state.books.filter((book) =>
-        book.genres.some(
-          (genre) =>
-            cBState[genre.name.toLowerCase()] &&
-            cBState[genre.name.toLowerCase()] === true
-        )
-      )
+  handleSort(e) {
+    const checkBoxState = {
+      ...this.state.checkBoxState,
+      [e.target.value]: e.target.checked
     }
-    console.log(filteredCheckboxGenre)
-    return filteredCheckboxGenre
+    const filteredBooks = Object.values(checkBoxState).some((value) => value)
+      ? this.state.books.filter((book) =>
+        book.genres.some((genre) => checkBoxState[genre.name.toLowerCase()])
+      )
+      : this.state.books
+
+    this.setState({
+      checkBoxState,
+      filteredBooks
+    })
   }
 
-  filterCheckboxPrice() {
-    let filteredCheckboxPrice = this.state.books
-    const cBState = this.state.checkBoxState
+  handleSortPrice(e, value) {
+    const checkBoxState = {
+      ...this.state.checkBoxState,
+      [e.target.name]: e.target.checked
+    }
+    const pricesToFilter = e.target.checked
+      ? [...this.state.pricesToFilter, value]
+      : this.state.pricesToFilter.filter(
+        (price) => price.priceMin !== value.priceMin
+      )
 
-    if (Object.keys(cBState).length > 0) {
-      filteredCheckboxPrice = this.state.books.filter((book) => {
-        book.price = Number(book.price)
-        const range = Object.keys(cBState)[0]
-        return (
-          book.price >= cBState[range].priceMin &&
-          book.price <= cBState[range].priceMax
+    const filteredBooks = pricesToFilter.length
+      ? this.state.books.filter((book) => {
+        return pricesToFilter.some(
+          (range) =>
+            book.price >= range.priceMin && book.price <= range.priceMax
         )
       })
-    }
-    return filteredCheckboxPrice
-  }
+      : this.state.books
 
-  filterAll(e, filter) {
-    switch ((e, filter)) {
-      case 'search':
-        return this.filterBooks(e, filter)
-      case 'price':
-        return this.filterCheckboxPrice(e, filter)
-      case 'genre':
-        return this.filterCheckBoxGenre(e, filter)
-      default:
-        return null
-    }
-    
+    this.setState({ checkBoxState, pricesToFilter, filteredBooks })
   }
 
   currentGenres() {
@@ -156,11 +106,9 @@ class Books extends Component {
   }
 
   render() {
-    console.log('check the books', this.state.books)
-    console.log('checkboxstate', this.state.checkBoxState)
-    
+    console.log('books', this.state.books)
+    console.log('filtered books', this.state.filteredBooks)
     if (!this.state.books) return <h1>Please wait while loading...</h1>
-
     return (
       <div>
         <aside className="menu">
@@ -176,19 +124,17 @@ class Books extends Component {
           </ul>
           <div className="control">
             <p className="menu-label Genre is-centered">Genres</p>
-
             <div className="comedy">
               <label className="checkbox">
                 <input
                   type="checkbox"
                   checked={this.state.checkBoxState['comedy'] || ''}
-                  onChange={this.handleSort}
+                  onChange={(e) => this.handleSort(e)}
                   value="comedy"
                 />
                 Comedy
               </label>
             </div>
-
             <div className="Fiction">
               <label className="checkbox">
                 <input
@@ -302,8 +248,10 @@ class Books extends Component {
                 <input
                   type="checkbox"
                   checked={this.state.checkBoxState['4 - 4.99'] || ''}
-                  onChange={this.handleSort}
-                  value="4 - 4.99"
+                  onChange={(e) =>
+                    this.handleSortPrice(e, { priceMax: 4.99, priceMin: 4 })
+                  }
+                  name="4 - 4.99"
                 />
                 4 - 4.99
               </label>
@@ -313,15 +261,16 @@ class Books extends Component {
                 <input
                   type="checkbox"
                   checked={this.state.checkBoxState['5 - 5.99'] || ''}
-                  onChange={this.handleSort}
-                  value="5 - 5.99"
+                  onChange={(e) =>
+                    this.handleSortPrice(e, { priceMax: 5.99, priceMin: 5 })
+                  }
+                  name="5 - 5.99"
                 />
                 5 - 5.99
               </label>
             </div>
           </div>
         </aside>
-
         <section className="section">
           <div className="container">
             <div className="columns">
@@ -335,7 +284,7 @@ class Books extends Component {
                       onKeyUp={this.handleSearch}
                     />
                     <span className="icon is-small is-right">
-                      <i className="fas fa-search"></i>
+                      <i className="fas fa-search" />
                     </span>
                   </p>
                 </div>
@@ -370,10 +319,9 @@ class Books extends Component {
                 </div>
               </div>
             </div>
-
             <br />
             <div className="columns is-multiline is-desktop is-mobile">
-              {this.filterAll('thriller', 'genre').map((book) => (
+              {this.state.filteredBooks.map((book) => (
                 <div
                   className="column is-one-quarter-desktop is-half-mobile"
                   key={book.id}
@@ -394,69 +342,4 @@ class Books extends Component {
     )
   }
 }
-
 export default Books
-
-// else if (
-//           book.price >= [Number('2')] &&
-//           book.price <= [Number('2.99')]
-//         ) {
-//           return true
-//         } else if (
-//           book.price >= [Number('3')] &&
-//           book.price <= [Number('3.99')]
-//         ) {
-//           return true
-//         } else if (book.price >= Number('4') && book.price <= Number('4.99')) {
-//           return true
-//         } else if (book.price >= Number('5') && book.price <= Number('5.99')) {
-//           return true
-//         }
-
-// function App() {
-//   return (
-//     <div id="colorlib-page">
-//       <div id="container-wrap">
-//         <Sidebar></Sidebar>
-//         <div id="colorlib-main">
-//           <Homepage />
-//           <Introduction></Introduction>
-//           <About></About>
-//           <Projects></Projects>
-//           <Blog></Blog>
-//           <Timeline></Timeline>
-//         </div>
-//       </div>
-//     </div>
-//   );
-// }
-
-// //we use a reduce method for the books array, using 2 arguments "genreArr" and 'book'
-//     const allgenre = this.state.books.reduce((genreArr, book) => {
-//       // we then get each genre from the book genres
-//       book.genres.forEach((genre) => {
-//         // we say if some of the genre with the matching genre id are in the "genreArr" meaning genre Array
-//         if(!genreArr.some(({id}) => id === genre.id)){
-//           //if they are not from above, push them in based on below
-//           genreArr.push(genre)
-//         }
-//       })
-//       return genreArr
-//     }, [])
-//     //we pass all this into a variable called "allgenre"
-
-// currentGenres() {
-//     //In the array of books, we find each book whose title matches the title in "state"
-//     //and pass it into a variable called currentBook
-//     const currentBook = this.state.books.find(
-//       (book) => book.title === this.state.title
-//     )
-//     //here we say if no book title matches the title in state and nothing is inside "currentBook", do nothing
-//     if (!currentBook) return
-//     // else if there is something, map over the genres of each book, to get the "name of the genre", genre.name.
-//     return currentBook.genres.map((genre) => (
-//       <option key={genre.id}>{genre.name}</option>
-//     ))
-//   }
-//   // We then pass the name of the function "currentGenres" into ComponentDidMount
-//   //and the dropdown select option for Genres

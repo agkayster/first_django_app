@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { HashRouter, Route, Switch } from 'react-router-dom'
 import ReactDOM from 'react-dom'
-import Books from './component/books/Books'
+import Books from './component/books/Books1'
 import BooksSHOW from './component/books/BooksSHOW'
 import 'bulma'
 import '@fortawesome/fontawesome-free/js/all.js'
