@@ -2,8 +2,6 @@ import React, { Component } from 'react'
 import Axios from 'axios'
 import Card from '../common/Card'
 import { Link } from 'react-router-dom'
-import { filter } from 'lodash'
-// import _ from 'lodash'
 
 class Books extends Component {
   constructor(props) {
@@ -142,7 +140,6 @@ class Books extends Component {
       default:
         return null
     }
-    
   }
 
   currentGenres() {
@@ -158,7 +155,7 @@ class Books extends Component {
   render() {
     console.log('check the books', this.state.books)
     console.log('checkboxstate', this.state.checkBoxState)
-    
+
     if (!this.state.books) return <h1>Please wait while loading...</h1>
 
     return (
