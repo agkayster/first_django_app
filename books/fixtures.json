@@ -36,6 +36,15 @@
   }
 },
 {
+  "model": "books.author",
+  "pk": 5,
+  "fields": {
+    "firstname": "Kate",
+    "middlename": "Elizabeth",
+    "lastname": "Russel"
+  }
+},
+{
   "model": "books.genre",
   "pk": 1,
   "fields": {
@@ -84,6 +93,9 @@
     "title": "Eze goes to School",
     "author": 1,
     "image": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1389285032l/20498940.jpg",
+    "summary": "Reading Eze Goes to School by Onuora Nzekwu and Michael Crowder, many years after class one, many things struck me.\r\nThis book, set in the 40s somewhere in Eastern Nigeria, had all the elements of the forces acting everywhere East of the Niger today.\r\n\r\nThe death of Okonkwo signified the death of that progressive force in Igbo land. In fact, the very nature of his death, which bothered on betrayal by kinsmen, captured the fundamental nature of the political paralysis facing Eastern states.",
+    "price_currency": "GBP",
+    "price": "2.99",
     "user": 1,
     "genres": [
       1,
@@ -99,6 +111,9 @@
     "title": "Things Fall Apart",
     "author": 2,
     "image": "https://2.bp.blogspot.com/-36EFf-W4Xrs/WOHhISjulOI/AAAAAAAAA5E/PL7Xr63vtFYulOuDPTk8zXLfKx-yB1KfQCLcB/s640/1.png",
+    "summary": "The novel chronicles the life of Okonkwo, the leader of an Igbo community, from the events leading up to his banishment from the community for accidentally killing a clansman, through the seven years of his exile, to his return, and it addresses a particular problem of emergent Africa\u2014the intrusion in the 1890s of white missionaries and colonial government into tribal Igbo society. Traditionally structured, and peppered with Igbo proverbs, it describes the simultaneous disintegration of its protagonist Okonkwo and of his village. The novel was praised for its intelligent and realistic treatment of tribal beliefs and of psychological disintegration coincident with social unraveling.",
+    "price_currency": "GBP",
+    "price": "1.59",
     "user": 1,
     "genres": [
       3,
@@ -114,6 +129,9 @@
     "title": "Love You Forever",
     "author": 3,
     "image": "https://upload.wikimedia.org/wikipedia/en/thumb/e/e5/LoveYouForever.png/220px-LoveYouForever.png",
+    "summary": "The story details the cycle of life by chronicling the experiences of a young son and his mother throughout the course of the boy's life, and describing the exasperating behaviour exhibited by him throughout his youth. In spite of her occasional aggravation caused by her son's behaviour, the mother nonetheless visits his bedroom nightly to cradle him in her arms, and sing a brief lullaby promising to always love him. After her son enters adulthood and leaves home, his elderly mother occasionally sneaks into his bedroom at night to croon her customary lullaby. However she gradually grows old and frail, and her grown son visits his feeble, sickly mother for the final time. When he first arrives, his mother tries to sing her lullaby to him, but she is too weak to finish. He then cradles her in his arms and sings an altered rendition of her lullaby in reciprocation of the unconditional love that she had shown him throughout his life, vowing to always love her in return.",
+    "price_currency": "GBP",
+    "price": "2.99",
     "user": 2,
     "genres": [
       3,
@@ -129,11 +147,31 @@
     "title": "There There",
     "author": 4,
     "image": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1522275340l/39673556._SY475_.jpg",
+    "summary": "Fierce, angry, funny, heartbreaking - Tommy Orange's first novel is a wondrous and shattering portrait of an America few of us have ever seen, and it introduces a brilliant new author at the start of a major career.\r\n\r\nThere There is a relentlessly paced multigenerational story about violence and recovery, memory and identity, and the beauty and despair woven into the history of a nation and its people. It tells the story of twelve characters, each of whom have private reasons for traveling to the Big Oakland Powwow. Jacquie Red Feather is newly sober and trying to make it back to the family she left behind in shame. Dene Oxendene is pulling his life back together after his uncle's death and has come to work at the powwow to honor his uncle's memory. Opal Viola Victoria Bear Shield has come to watch her nephew Orvil, who has taught himself traditional Indian dance through YouTube videos and has come to the powwow to dance in public for the very first time. There will be glorious communion, and a spectacle of sacred tradition and pageantry. And there will be sacrifice, and heroism, and unspeakable loss.",
+    "price_currency": "USD",
+    "price": "1.99",
     "user": 2,
     "genres": [
       3,
       5,
       6
+    ]
+  }
+},
+{
+  "model": "books.book",
+  "pk": 5,
+  "fields": {
+    "title": "My Dark Vanessa",
+    "author": 5,
+    "image": "https://cdn.shopify.com/s/files/1/0011/3334/6863/products/71zWT2VoVwL.jpg?v=1575713783",
+    "summary": "Exploring the psychological dynamics of the relationship between a precocious yet na\u00efve teenage girl and her magnetic and manipulative teacher, a brilliant, all-consuming read that marks the explosive debut of an extraordinary new writer.\r\n\r\nBright, ambitious, and yearning for adulthood, fifteen-year-old Vanessa Wye becomes entangled in an affair with Jacob Strane, her magnetic and guileful forty-two-year-old English teacher.\r\n\r\n2017. Amid the rising wave of allegations against powerful men, a reckoning is coming due. Strane has been accused of sexual abuse by a former student, who reaches out to Vanessa, and now Vanessa suddenly finds herself facing an impossible choice: remain silent, firm in the belief that her teenage self willingly engaged in this relationship, or redefine herself and the events of her past. But how can Vanessa reject her first love, the man who fundamentally transformed her and has been a persistent presence in her life? Is it possible that the man she loved as a teenager\u2014and who professed to worship only her\u2014may be far different from what she has always believed?",
+    "price_currency": "GBP",
+    "price": "3.99",
+    "user": 1,
+    "genres": [
+      3,
+      5
     ]
   }
 }

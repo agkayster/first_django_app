@@ -73,7 +73,7 @@ class BooksShow extends Component {
                     <div className="buttons">
                       <Link
                         className="button"
-                        to={`/books/${this.state.book._id}/edit`}
+                        to={`/books/${this.state.book.id}/edit`}
                       >
                         Edit
                       </Link>
