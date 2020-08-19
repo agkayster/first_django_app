@@ -73,11 +73,11 @@ const Books = () => {
   const [title, setTitle] = useState('Eze goes to School')
 
   useEffect(() => {
-    const bookUpdate = async () => {
+    const listBooks = async () => {
       const data = await Axios.get('/api/books')
       setBooks(data)
     }
-    bookUpdate()
+    listBooks()
   }, [])
 
   const handleBooks = (e) => {
@@ -89,7 +89,7 @@ const Books = () => {
     setSearchTerm(searchTerm)
   }
 
-  const handleSort = ({ target: { value, checked } }) => {
+  const handleGenreCheckBox = ({ target: { value, checked } }) => {
     setCheckBoxState({ ...checkBoxState, [value]: checked })
 
     const genresCheckBox = checked
@@ -98,7 +98,7 @@ const Books = () => {
     setGenresToFilter(genresCheckBox)
   }
 
-  const handleSortPrice = ({ target: { name, checked } }, value) => {
+  const handlePriceCheckBox = ({ target: { name, checked } }, value) => {
     setCheckBoxState({ ...checkBoxState, [name]: checked })
 
     const pricesCheckBox = checked
@@ -136,9 +136,12 @@ const Books = () => {
   }
 
   const passesAllFilters = (book) =>
-    [filterBooksByText, filterBooksByGenre, filterBooksByPrice].reduce(
-      (acc, currFilterFunc) => acc && currFilterFunc(book),
-      true
+    [
+      filterBooksByText,
+      filterBooksByGenre,
+      filterBooksByPrice
+    ].reduce((didBookPassPrevFilter, currFilterFunc) =>
+      didBookPassPrevFilter ? currFilterFunc(book) : false
     )
 
   const filterBooks = (books) =>
@@ -155,6 +158,7 @@ const Books = () => {
   if (books.length === 0) return <h1>Please wait while loading...</h1>
 
   console.log(pricesToFilter)
+  console.log(books)
 
   return (
     <div>
@@ -177,7 +181,7 @@ const Books = () => {
               genreClass={genre.genreClass}
               isChecked={checkBoxState[genre.value] || ''}
               value={genre.value}
-              handleSort={handleSort}
+              handleSort={handleGenreCheckBox}
             />
           ))}
         </div>
@@ -190,7 +194,7 @@ const Books = () => {
               isChecked={checkBoxState[price.name] || ''}
               priceRange={price.priceRange}
               name={price.name}
-              handleSortPrice={handleSortPrice}
+              handleSortPrice={handlePriceCheckBox}
             />
           ))}
         </div>
