@@ -13,11 +13,14 @@ class BooksTests(APITestCase):
         user = User.objects.create(username='admin', email='ejike@gmail.com')
         author = Author.objects.create(
             firstname='Onuora', middlename='', lastname='Nzekwu')
-        genre = Genre.objects.create(name='Comedy')
+        genre = Genre.objects.create(name='Comedy')[1], Genre.objects.create(
+            name='Fiction')[4], Genre.objects.create(name='Thriller')[6]
         book = Book.objects.create(
             title='Eze goes to School', author=author,
             image='https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1389285032l/20498940.jpg',
             user=user)
+        summary = '',
+        price = None,
         book.genres.set([genre])  # Have to use `set` with M:M relationships
 
     def test_books_index(self):
@@ -30,12 +33,18 @@ class BooksTests(APITestCase):
 
         self.assertEqual(response.status_code, 200)
         self.assertJSONEqual(response.content, [{
+            'id': 1,
+            'title': 'Eze goes to School',
             'author': {
                 'id': 1,
                 'firstname': 'Onuora',
                 'middlename': '',
                 'lastname': 'Nzekwu'
             },
+            'image': 'https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1389285032l/20498940.jpg',
+            'price': None,
+            'summary': '',
+
             'genres': [{
                 'id': 1,
                 'name': 'Comedy'
@@ -48,10 +57,6 @@ class BooksTests(APITestCase):
                 'id': 6,
                 'name': 'Thriller'
             }],
-            'id': 1,
-            'image': 'https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1389285032l/20498940.jpg',
-            'title': 'Eze goes to School',
-
             'user': {
                 'username': 'admin',
                 'email': 'ejike@gmail.com'
@@ -126,4 +131,3 @@ class BooksTests(APITestCase):
 #         self.client.force_authenticate(user=None)  # remove authentication
 #         response = self.client.post(url, data)
 #         self.assertEqual(response.status_code, 401)
-
