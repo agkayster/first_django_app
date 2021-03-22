@@ -87,7 +87,6 @@ const Books = () => {
   }, [])
 
   const filterBooksByText = (book) => {
-    console.log('filtering books', book)
     if (!searchTerm) return true
     return (
       searchTerm.test(book.title) ||
@@ -164,7 +163,8 @@ const Books = () => {
 
   if (books.length === 0) return <h1>Please wait while loading...</h1>
 
-  console.log('books', books)
+  console.log('state of check box', checkBoxState)
+  console.log('filter prices', pricesToFilter)
 
   return (
     <div>
@@ -223,7 +223,7 @@ const Books = () => {
                       className="input"
                       type="text"
                       placeholder="search"
-                      onKeyUp={handleSearch}
+                      onChange={handleSearch}
                     />
                     <span className="icon is-small is-right">
                       <i className="fas fa-search" />
