@@ -20,9 +20,12 @@ class Home extends Component {
 								<h3 className='home subtitle is-5'>
 									Bookatee helps those who love to read,
 									<br />
-									get the books they love to read from anywhere in the world.
+									get the books they love to read from
+									anywhere in the world.
 								</h3>
-								<Link to='/register' className='button is-primary home'>
+								<Link
+									to='/register'
+									className='button is-primary home'>
 									Create your account
 								</Link>
 							</div>

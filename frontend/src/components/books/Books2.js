@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 import PriceCheckBox from './PriceCheckBox';
 import GenreCheckBox from './GenreCheckBox';
 import OtherNavbar from '../common/OtherNavbar';
+import Auth from '../../lib/Auth';
 
 const genres = [
 	{
@@ -82,6 +83,10 @@ const Books = () => {
 	useEffect(() => {
 		const listBooks = async () => {
 			const data = await Axios.get('/api/books');
+			console.log('all books=>', data.data[0].id);
+			{
+				`Bearer ${Auth.getToken()}`;
+			}
 			setBooks(data);
 		};
 		listBooks();
@@ -149,7 +154,9 @@ const Books = () => {
 
 		const pricesCheckBox = checked
 			? [...pricesToFilter, value]
-			: pricesToFilter.filter((price) => price.priceMin !== value.priceMin);
+			: pricesToFilter.filter(
+					(price) => price.priceMin !== value.priceMin
+			  );
 
 		setPricesToFilter(pricesCheckBox);
 	};
@@ -236,9 +243,13 @@ const Books = () => {
 								<div className='field'>
 									<div className='control'>
 										<div className='select books'>
-											<select onChange={handleBooks} value={title}>
+											<select
+												onChange={handleBooks}
+												value={title}>
 												{books.data.map((book) => (
-													<option key={book.id}>{book.title}</option>
+													<option key={book.id}>
+														{book.title}
+													</option>
 												))}
 											</select>
 										</div>
@@ -251,7 +262,9 @@ const Books = () => {
 										<div className='select genre'>
 											<select>
 												{currentGenres((genre) => (
-													<option key={genre.id}>{genre}</option>
+													<option key={genre.id}>
+														{genre}
+													</option>
 												))}
 											</select>
 										</div>
@@ -259,6 +272,9 @@ const Books = () => {
 								</div>
 							</div>
 						</div>
+						<p className='booksInfo'>
+							Click on any of the books to get to know more
+						</p>
 						<br />
 						<div className='columns is-multiline is-desktop is-mobile'>
 							{books.data.length > 0 &&
