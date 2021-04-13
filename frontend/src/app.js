@@ -8,6 +8,7 @@ import BooksSHOW from './components/books/BooksSHOW';
 import BooksEdit from './components/books/BooksEDIT';
 import Register from './components/auth/Register';
 import Login from './components/auth/Login';
+import OtherNavbar from './components/common/OtherNavbar';
 import 'bulma';
 import '@fortawesome/fontawesome-free/js/all.js';
 import './style.scss';
@@ -17,6 +18,7 @@ class App extends Component {
 		return (
 			<div>
 				<HashRouter>
+					<OtherNavbar />
 					<Switch>
 						<SecureRoute
 							path='/books/:id/edit'

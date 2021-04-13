@@ -178,9 +178,9 @@ $navbar-dropdown-background-color: grey;
 	margin-top: 5px;
 }
 
-.navbar-item.register {
-	background-color: red;
-}
+// .navbar-item.register {
+// 	background-color: red;
+// }
 
 .navbar.other {
 	background-color: rgba(169, 169, 169, 0.5);
@@ -196,19 +196,21 @@ $navbar-dropdown-background-color: grey;
 // }
 
 //====================================================================================> Register & Login
-.FormCenter.register {
-	margin-bottom: 40px;
+
+.registerForm {
 	display: flex;
 	flex-direction: column;
 	flex-wrap: wrap;
 	align-items: center;
+	justify-content: center;
 	width: 40%;
 	margin: auto;
-	margin-top: 135px;
-	/* padding-left: 280px; */
-	/* padding-right: 280px; */
-	border: 2px solid grey;
-	border-radius: 5px;
+	height: 600px;
+	border: 5px solid grey;
+	border-radius: 12px;
+	background-color: rgba(139, 69, 19, 0.8);
+	z-index: 5;
+	position: relative;
 }
 
 .FormCenter.login {
@@ -270,7 +272,7 @@ $navbar-dropdown-background-color: grey;
 }
 
 .FormField__Link {
-	color: #66707d;
+	color: whitesmoke;
 	text-decoration: none;
 	display: inline-block;
 	border-bottom: 1.5px solid #225e62;
@@ -288,7 +290,7 @@ $navbar-dropdown-background-color: grey;
 }
 
 .FormField__TermsLink {
-	color: black;
+	color: whitesmoke;
 	border-bottom: 1px solid #199087;
 	text-decoration: none;
 	display: inline-block;
@@ -298,11 +300,12 @@ $navbar-dropdown-background-color: grey;
 
 .FormTitle__Link {
 	font-size: 30px;
-	// margin-right: 75px;
+	color: white;
 }
 
 .checked {
 	margin-left: 5px;
+	color: whitesmoke;
 }
 
 .NewBok {
@@ -315,6 +318,16 @@ $navbar-dropdown-background-color: grey;
 
 .Login {
 	margin-left: 20px;
+}
+
+.register {
+	background: url('./components/assets/Register_page.jpg') fixed bottom;
+	background-size: cover;
+	background-position: 50% 50%;
+	height: 100vh;
+	padding-top: 50px;
+	z-index: 2;
+	position: relative;
 }
 
 //============================================================================> SHOW Page
