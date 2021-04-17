@@ -51,6 +51,7 @@ class Register extends React.Component {
         <section className='FormCenter'>
           <div className='registerForm'>
             <RegisterFormTitle />
+            <br />
             <div className='container'>
               <form
                 className='FormFields'
@@ -59,7 +60,7 @@ class Register extends React.Component {
                   <label
                     className='FormField__Label'
                     htmlFor='name'>
-										Username
+                    <strong>Username</strong>
                   </label>
                   <div className='control'>
                     <input
@@ -82,7 +83,7 @@ class Register extends React.Component {
                   <label
                     className='FormField__Label'
                     htmlFor='email'>
-										Email
+                    <strong>Email</strong>
                   </label>
                   <div className='control'>
                     <input
@@ -105,7 +106,7 @@ class Register extends React.Component {
                   <label
                     className='FormField__Label'
                     htmlFor='password'>
-										Password
+                    <strong>Password</strong>
                   </label>
                   <div className='control'>
                     <input
@@ -128,7 +129,7 @@ class Register extends React.Component {
                   <label
                     className='FormField__Label'
                     htmlFor='password'>
-										Confirm Password
+                    <strong>Confirm Password</strong>
                   </label>
                   <div className='control'>
                     <input
@@ -183,6 +184,7 @@ class Register extends React.Component {
                   <button className='FormField__Button mr-20'>
 										Sign Up
                   </button>
+
                   <Link
                     to='/login'
                     className='FormField__Link'>

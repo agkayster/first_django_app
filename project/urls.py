@@ -15,11 +15,16 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+# from django.conf.urls import url
+
+# app_name = 'ratings',
+# namespace = 'ratings',
 
 urlpatterns = [
     path('django-admin/', admin.site.urls),
     path('auth/', include('rest_framework.urls')),
     path('api/', include('jwt_auth.urls')),
     path('api/', include('books.urls')),
-    path('', include('frontend.urls'))
+    path('', include('frontend.urls')),
+    # path(r'^ratings/', include('star_ratings.urls')),
 ]

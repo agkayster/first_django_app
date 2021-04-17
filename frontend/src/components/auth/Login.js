@@ -45,57 +45,74 @@ class Login extends React.Component {
 
   render() {
     return (
-      <section className='FormCenter login'>
-        <LoginFormTitle />
-        <div className='container'>
-          <form className='FormFields' onSubmit={this.handleSubmit}>
-            <div className='FormField'>
-              <label className='FormField__Label' htmlFor='email'>
-								Email
-              </label>
-              <div className='control'>
-                <input
-                  type='email'
-                  id='email'
-                  className='FormField__Input'
-                  placeholder='Enter your Email'
-                  name='email'
-                  value={this.state.email}
-                  onChange={this.handleChange}
-                />
+      <div className='login'>
+        <section className='FormCenter login'>
+          <div className='loginForm'>
+            <LoginFormTitle />
+            <br />
+            <div className='container'>
+              <form
+                className='FormFields'
+                onSubmit={this.handleSubmit}>
+                <div className='FormField'>
+                  <label
+                    className='FormField__Label'
+                    htmlFor='email'>
+                    <strong>Email</strong>
+                  </label>
+                  <div className='control'>
+                    <input
+                      type='email'
+                      id='email'
+                      className='FormField__Input'
+                      placeholder='Enter your Email'
+                      name='email'
+                      value={this.state.email}
+                      onChange={this.handleChange}
+                    />
+                  </div>
+                </div>
+                <div className='FormField'>
+                  <label
+                    className='FormField__Label'
+                    htmlFor='password'>
+                    <strong>Password</strong>
+                  </label>
+                  <div className='control'>
+                    <input
+                      type='password'
+                      id='password'
+                      className='FormField__Input'
+                      placeholder='Enter your Password'
+                      name='password'
+                      value={this.state.password}
+                      onChange={this.handleChange}
+                    />
+                  </div>
+                  {this.state.error && (
+                    <small className='help is-danger'>
+                      {this.state.error}
+                    </small>
+                  )}
+                </div>
+                <div className='FormField'>
+                  <button className='FormField__Button mr-20 Login'>
+										Sign In
+                  </button>
+                </div>
+              </form>
+              <div className='FormField NewCreate'>
+                <span className='NewBok'>New to Bokatee?</span>
+                <Link
+                  to='/register'
+                  className='FormField__Link'>
+									Create an account
+                </Link>
               </div>
             </div>
-            <div className='FormField'>
-              <label className='FormField__Label' htmlFor='password'>
-								Password
-              </label>
-              <div className='control'>
-                <input
-                  type='password'
-                  id='password'
-                  className='FormField__Input'
-                  placeholder='Enter your Password'
-                  name='password'
-                  value={this.state.password}
-                  onChange={this.handleChange}
-                />
-              </div>
-              {this.state.error && (
-                <small className='help is-danger'>{this.state.error}</small>
-              )}
-            </div>
-            <div className='FormField'>
-              <button className='FormField__Button mr-20 Login'>Sign In</button>
-            </div>
-          </form>
-          <div className='FormField NewCreate'>
-            <span className='NewBok'>New to Bokatee?</span>
-            <Link to='/register' className='FormField__Link'>
-							Create an account
-            </Link>
           </div>
-        </div>
-      </section>
+        </section>
+      </div>
     )
   }
 }

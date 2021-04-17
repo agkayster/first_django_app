@@ -8,9 +8,9 @@ const PriceCheckBox = ({
   handleSortPrice
 }) => (
   <div className={priceClass} key={name}>
-    <label className="checkbox">
+    <label className='checkbox'>
       <input
-        type="checkbox"
+        type='checkbox'
         checked={isChecked}
         onChange={(e) => handleSortPrice(e, priceRange)}
         name={name}

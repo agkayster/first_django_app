@@ -5,7 +5,8 @@ import Card from '../common/Card'
 import { Link } from 'react-router-dom'
 import PriceCheckBox from './PriceCheckBox'
 import GenreCheckBox from './GenreCheckBox'
-import OtherNavbar from '../common/OtherNavbar'
+import RatingCheckBox from './RatingCheckBox'
+// import OtherNavbar from '../common/OtherNavbar'
 import Auth from '../../lib/Auth'
 
 const genres = [
@@ -72,21 +73,43 @@ const prices = [
   }
 ]
 
+const ratings = [
+  {
+    ratingClass: 'rate1',
+    value: '1'
+  },
+  {
+    ratingClass: 'rate2',
+    value: '2'
+  },
+  {
+    ratingClass: 'rate3',
+    value: '3'
+  },
+  {
+    ratingClass: 'rate4',
+    value: '4'
+  },
+  {
+    ratingClass: 'rate5',
+    value: '5'
+  }
+]
+
 const Books = () => {
   const [searchTerm, setSearchTerm] = useState('')
   const [checkBoxState, setCheckBoxState] = useState({})
   const [pricesToFilter, setPricesToFilter] = useState([])
   const [genresToFilter, setGenresToFilter] = useState([])
+  const [ratingsToFilter, setRatingsToFilter] = useState([])
   const [books, setBooks] = useState([])
-  const [title, setTitle] = useState('Eze goes to School')
+  // const [title, setTitle] = useState('Eze goes to School')
 
   useEffect(() => {
     const listBooks = async () => {
-      const data = await Axios.get('/api/books')
-      console.log('all books=>', data.data[0].id)
-      {
-        `Bearer ${Auth.getToken()}`
-      }
+      const data = await Axios.get('/api/books', {
+        headers: { Authorization: `Bearer ${Auth.getToken()}` }
+      })
       setBooks(data)
     }
     listBooks()
@@ -119,22 +142,31 @@ const Books = () => {
     )
   }
 
+  const filterBooksByRatings = (book) => {
+    if (!ratingsToFilter.length) return true
+    const newBook = String(book.rating)
+    console.log('check newBook is a string =>', typeof newBook)
+    return ratingsToFilter.includes(newBook)
+  }
+
   const filterBooks = (books) => {
     console.log('books in filter func', books)
     return books.data.filter((book) => passesAllFilters(book))
   }
 
   const passesAllFilters = (book) =>
-    [filterBooksByText, filterBooksByGenre, filterBooksByPrice].reduce(
-      (passedPrevFilter, currFilterFunc) => {
-        return passedPrevFilter && currFilterFunc(book)
-      },
-      true
-    )
+    [
+      filterBooksByText,
+      filterBooksByGenre,
+      filterBooksByPrice,
+      filterBooksByRatings
+    ].reduce((passedPrevFilter, currFilterFunc) => {
+      return passedPrevFilter && currFilterFunc(book)
+    }, true)
 
-  const handleBooks = (e) => {
-    setTitle(e.target.value)
-  }
+  // const handleBooks = (e) => {
+  //   setTitle(e.target.value)
+  // }
 
   const handleSearch = (e) => {
     setSearchTerm(new RegExp(e.target.value, 'i'))
@@ -161,13 +193,22 @@ const Books = () => {
     setPricesToFilter(pricesCheckBox)
   }
 
-  const currentGenres = () => {
-    const currentBook = books.data.find((book) => book.title === title)
-    if (!currentBook) return
-    return currentBook.genres.map((genre) => (
-      <option key={genre.id}>{genre.name}</option>
-    ))
+  const handleRatingCheckBox = ({ target: { value, checked } }) => {
+    setCheckBoxState({ ...checkBoxState, [value]: checked })
+
+    const ratingsCheckBox = checked
+      ? [...ratingsToFilter, value]
+      : ratingsToFilter.filter((rating) => rating !== value)
+    setRatingsToFilter(ratingsCheckBox)
   }
+
+  // const currentGenres = () => {
+  //   const currentBook = books.data.find((book) => book.title === title)
+  //   if (!currentBook) return
+  //   return currentBook.genres.map((genre) => (
+  //     <option key={genre.id}>{genre.name}</option>
+  //   ))
+  // }
 
   if (books.length === 0) return <h1>Please wait while loading...</h1>
 
@@ -176,21 +217,8 @@ const Books = () => {
 
   return (
     <div>
-      <OtherNavbar />
       <div className='book'>
         <aside className='menu'>
-          <p className='menu-label'>
-            <strong>Books Gallery</strong>
-          </p>
-          <ul className='menu-list'>
-            {books.data.map((book) => (
-              <li key={book.id}>
-                <Link to={`${book.id}`}>
-                  <p>{book.title}</p>
-                </Link>
-              </li>
-            ))}
-          </ul>
           <div className='control genre'>
             <p className='menu-label Genre is-centered'>
               <strong>Genres</strong>
@@ -212,7 +240,7 @@ const Books = () => {
             {prices.map((price) => (
               <PriceCheckBox
                 key={price.name}
-                priceClass={price.pricesClass}
+                priceClass={price.priceClass}
                 isChecked={checkBoxState[price.name] || ''}
                 priceRange={price.priceRange}
                 name={price.name}
@@ -220,11 +248,25 @@ const Books = () => {
               />
             ))}
           </div>
+          <div className='control rating'>
+            <p className='menu-label is-centered'>
+              <strong>Rating(Over 5)</strong>
+            </p>
+            {ratings.map((rating) => (
+              <RatingCheckBox
+                key={rating.value}
+                ratingClass={rating.ratingClass}
+                isChecked={checkBoxState[rating.value] || ''}
+                value={rating.value}
+                handleSortRating={handleRatingCheckBox}
+              />
+            ))}
+          </div>
         </aside>
         <section className='section'>
           <div className='container'>
-            <div className='columns'>
-              <div className='column is-one-third'>
+            <div className='columns is-centered'>
+              <div className='column is-half'>
                 <div className='field'>
                   <p className='control has-icons-right'>
                     <input
@@ -239,7 +281,7 @@ const Books = () => {
                   </p>
                 </div>
               </div>
-              <div className='column is-one-third'>
+              {/* <div className='column is-one-third'>
                 <div className='field'>
                   <div className='control'>
                     <div className='select books'>
@@ -255,8 +297,8 @@ const Books = () => {
                     </div>
                   </div>
                 </div>
-              </div>
-              <div className='column is-one-third'>
+              </div> */}
+              {/* <div className='column is-one-third'>
                 <div className='field'>
                   <div className='control'>
                     <div className='select genre'>
@@ -270,11 +312,8 @@ const Books = () => {
                     </div>
                   </div>
                 </div>
-              </div>
+              </div> */}
             </div>
-            <p className='booksInfo'>
-							Click on any of the books to get to know more
-            </p>
             <br />
             <div className='columns is-multiline is-desktop is-mobile'>
               {books.data.length > 0 &&

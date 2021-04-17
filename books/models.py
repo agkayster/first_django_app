@@ -32,6 +32,9 @@ class Book (models.Model):
                        default_currency='GBP', blank=False, null=True)
     user = models.ForeignKey(User, related_name='books',
                              on_delete=models.CASCADE)
+    rating = models.IntegerField()
 
     def __str__(self):
         return f'{self.title} - {self.author}'
+    
+    

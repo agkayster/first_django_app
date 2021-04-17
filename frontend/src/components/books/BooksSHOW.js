@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import Axios from 'axios'
 import { Link } from 'react-router-dom'
 import Auth from '../../lib/Auth'
+import StarRatingComponent from 'react-star-rating-component'
 
 class BooksShow extends Component {
   constructor(props) {
@@ -21,10 +22,9 @@ class BooksShow extends Component {
 
   handleDelete(e) {
     console.log(e.target)
-    Axios.delete(`/api/books/${this.props.match.params.id}`),
-    {
+    Axios.delete(`/api/books/${this.props.match.params.id}`, {
       headers: { Authorization: `Bearer ${Auth.getToken()}` }
-    }.then(() => this.props.history.push('/api/books'))
+    }).then(() => this.props.history.push('/api/books'))
   }
 
   canModify() {
@@ -36,12 +36,10 @@ class BooksShow extends Component {
 
   render() {
     const { book } = this.state
-    console.log(this.state.book)
-    if (!this.state.book) return <h1>Please wait while loading...</h1>
+    console.log(book)
+    if (!book) return <h1>Please wait while loading...</h1>
 
-    const currentBook = this.state.book.genres
-      .map((genre) => genre.name)
-      .join(', ')
+    const currentBook = book.genres.map((genre) => genre.name).join(', ')
 
     console.log(currentBook)
 
@@ -50,9 +48,9 @@ class BooksShow extends Component {
         <section className='section show'>
           <div className='container'>
             <div className='columns is-mobile'>
-              <div className='column is-two-thirds-desktop'>
+              <div className='column is-full'>
                 {book && (
-                  <div>
+                  <div className='showpage'>
                     <header>
                       <p className='title is-2'>
 												Title: {book.title}
@@ -61,7 +59,7 @@ class BooksShow extends Component {
                     </header>
 
                     <div className='card-image'>
-                      <figure className='image show'>
+                      <figure className='image-show'>
                         <img
                           src={book.image}
                           alt={book.title}
@@ -69,9 +67,19 @@ class BooksShow extends Component {
                       </figure>
                     </div>
                     <br />
-                    <h2 className='subtitle is-4'>
-											Title: {book.title}
-                    </h2>
+
+                    <h3>Rating: {book.rating}/5</h3>
+                    <StarRatingComponent
+                      name='bookRating'
+                      editing={false}
+                      renderStarIcon={() => (
+                        <span>
+                          <i className='far fa-paper-plane'></i>
+                        </span>
+                      )}
+                      starColor='yellow'
+                      value={book.rating}
+                    />
                     <h2 className='subtitle is-4'>
 											Author:{' '}
                       {`${book.author.firstname} ${book.author.lastname}`}

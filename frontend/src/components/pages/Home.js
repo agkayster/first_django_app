@@ -1,43 +1,42 @@
-import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
-import Navbar from '../common/Navbar';
+import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 
 class Home extends Component {
-	render() {
-		return (
-			<div>
-				<Navbar />
-				<section className='hero image-one'>
-					<div className='hero-body'>
-						<div className='container'>
-							<div className='home'>
-								<h1 className='home subtitle is-2'>
-									<strong>
+  render() {
+    return (
+      <div className='hero-image'>
+        <section>
+          <div className='hero-body'>
+            <div className='container'>
+              <div className='home'>
+                <h1 className='home subtitle is-2'>
+                  <strong>
 										Get to know everything <br />
-										about the books you love
-									</strong>
-								</h1>
-								<h3 className='home subtitle is-5'>
+										about the books you enjoy reading...
+                  </strong>
+                </h1>
+                <h3 className='home subtitle is-5'>
 									Bookatee helps those who love to read,
-									<br />
-									get the books they love to read from
+                  <br />
+									get the books they want to read from
+                  <br />
 									anywhere in the world.
-								</h3>
-								<Link
-									to='/register'
-									className='button is-primary home'>
+                </h3>
+                <Link
+                  to='/register'
+                  className='button is-primary home'>
 									Create your account
-								</Link>
-							</div>
-						</div>
-					</div>
-				</section>
-			</div>
-		);
-	}
+                </Link>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    )
+  }
 }
 
-export default Home;
+export default Home
 
 // import React from 'react'
 // import Button from '../common/Button'
