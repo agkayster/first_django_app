@@ -58,7 +58,7 @@ class BooksShow extends Component {
                       <hr />
                     </header>
                     <div className='image-table'>
-                      <div className='card-image'>
+                      <div className='card-image show'>
                         <figure className='image-show'>
                           <img
                             src={book.image}

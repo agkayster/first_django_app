@@ -6,7 +6,7 @@ const Card = ({ title, author, image }) => {
       <header className='card-header'>
         <div className='card-header-title'>{title}</div>
       </header>
-      <div className='card-image'>
+      <div className='card-image index'>
         <figure className='image'>
           <img src={image} alt={title} className='card-image' />
           <p>click to know more about the book</p>
