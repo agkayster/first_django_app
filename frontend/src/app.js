@@ -9,6 +9,7 @@ import BooksEdit from './components/books/BooksEDIT'
 import Register from './components/auth/Register'
 import Login from './components/auth/Login'
 import OtherNavbar from './components/common/OtherNavbar'
+import Footer from './components/common/Footer'
 import 'bulma'
 import '@fortawesome/fontawesome-free/js/all.js'
 import './style.scss'
@@ -31,6 +32,7 @@ class App extends Component {
             <Route exact path='/' component={Home} />
           </Switch>
         </HashRouter>
+        <Footer />
       </div>
     )
   }

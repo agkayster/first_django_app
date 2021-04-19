@@ -46,65 +46,90 @@ class BooksShow extends Component {
     return (
       <div className='show'>
         <section className='section show'>
-          <div className='container'>
+          <div className='container show'>
             <div className='columns is-mobile'>
               <div className='column is-full'>
                 {book && (
                   <div className='showpage'>
                     <header>
-                      <p className='title is-2'>
-												Title: {book.title}
+                      <p className='title is-3'>
+											Title: {book.title}
                       </p>
                       <hr />
                     </header>
-
-                    <div className='card-image'>
-                      <figure className='image-show'>
-                        <img
-                          src={book.image}
-                          alt={book.title}
-                        />
-                      </figure>
-                    </div>
-                    <br />
-
-                    <h3>Rating: {book.rating}/5</h3>
-                    <StarRatingComponent
-                      name='bookRating'
-                      editing={false}
-                      renderStarIcon={() => (
-                        <span>
-                          <i className='far fa-paper-plane'></i>
-                        </span>
-                      )}
-                      starColor='yellow'
-                      value={book.rating}
-                    />
-                    <h2 className='subtitle is-4'>
-											Author:{' '}
-                      {`${book.author.firstname} ${book.author.lastname}`}
-                    </h2>
-                    <h2 className='subtitle is-4'>
-											Genres: {currentBook}
-                    </h2>
-                    <h2 className='subtitle is-4'>
-											Price(£): {book.price}
-                    </h2>
-                    <h2 className='subtitle is-4'>
-											Summary: {book.summary}
-                    </h2>
-                    {this.canModify() && (
-                      <div className='buttons'>
-                        <Link
-                          className='button'
-                          to={`/books/${book.id}/edit`}>
-													Edit
-                        </Link>
-                        <button className='button is-danger'>
-													Delete
-                        </button>
+                    <div className='image-table'>
+                      <div className='card-image'>
+                        <figure className='image-show'>
+                          <img
+                            src={book.image}
+                            alt={book.title}
+                          />
+                        </figure>
                       </div>
-                    )}
+                      <br />
+                      <table className='table-show'>
+                        <tr>
+                          <th>Rating: {book.rating}/5</th>
+                        </tr>
+                        <tr>
+                          <th>
+                            <StarRatingComponent
+                              name='bookRating'
+                              editing={false}
+                              renderStarIcon={() => (
+                                <span>
+                                  <i className='far fa-paper-plane'></i>
+                                </span>
+                              )}
+                              starColor='yellow'
+                              value={book.rating}
+                            />
+                          </th>
+                        </tr>
+                        <tr>
+                          <th>
+                            <h2 className='subtitle is-4'>
+														Author:{' '}
+                              {`${book.author.firstname} ${book.author.lastname}`}
+                            </h2>
+                          </th>
+                        </tr>
+                        <tr>
+                          <th>
+                            <h2 className='subtitle is-4'>
+														Genres: {currentBook}
+                            </h2>
+                          </th>
+                        </tr>
+                        <tr>
+                          <th>
+                            <h2 className='subtitle is-4'>
+														Price(£): {book.price}
+                            </h2>
+                          </th>
+                        </tr>
+                        <tr>
+                          <th>
+                            <h2 className='subtitle is-4'>
+														Summary: {book.summary}
+                            </h2>
+                          </th>
+                        </tr>
+
+                        {this.canModify() && (
+                          <div className='buttons'>
+                            <Link
+                              className='button'
+                              to={`/books/${book.id}/edit`}>
+														Edit
+                            </Link>
+                            <button className='button is-danger'>
+														Delete
+                            </button>
+                          </div>
+                        )}
+                      </table>
+                    </div>
                     <hr />
                   </div>
                 )}
