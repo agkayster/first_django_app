@@ -40,14 +40,17 @@ $margin: 2rem;
 
 //======================================================================> Aside books Index
 .menu {
-	height: 100vh;
+	height: 100%;
 	width: 160px;
-	position: fixed;
-	z-index: 1;
+	position: absolute;
 	top: 1;
 	background-color: none;
-	overflow-x: hidden;
+	overflow-x: auto;
 	padding-top: 20px;
+}
+
+.control.rating {
+	z-index: 2;
 }
 
 .menu-label {
@@ -99,7 +102,7 @@ $margin: 2rem;
 
 //=====================================================================> Styling for Cards display Books Index
 
-.card {
+div.card {
 	overflow: hidden;
 	min-height: 80%;
 	position: relative;
@@ -141,6 +144,16 @@ $margin: 2rem;
 	padding: 8px 15px;
 	visibility: visible;
 	opacity: 0.7;
+}
+
+.card-image {
+	width: 100%;
+	transition: width 2s;
+	transition-timing-function: ease-in-out;
+}
+
+.card-image:hover {
+	width: 120%;
 }
 
 // @media screen and (max-width: 768px) {
@@ -452,29 +465,46 @@ th:hover {
 }
 
 //================================================================================> Footer
-#footer-social {
+// #footer-social {
+// 	display: inline-flex;
+// 	flex-direction: row;
+// 	flex-wrap: wrap;
+// }
+
+.icons {
 	display: inline-flex;
 	flex-direction: row;
 	flex-wrap: wrap;
 }
 
-a.fab fa-twitter-square {
-	margin-right: 50px;
-	width: 100px;
+.fa-twitter-square,
+.fa-facebook-square,
+.fa-linkedin-in {
+	font-size: 25px;
+	transition: font-size 2s;
+}
+
+.fa-twitter-square:hover,
+.fa-facebook-square:hover,
+.fa-linkedin-in:hover {
+	font-size: 30px;
 }
 
 .fa-facebook-square {
-	margin-left: 50px;
+	margin-left: 15px;
 }
 
-path {
+.fa-linkedin-in {
+	margin-left: 15px;
+}
+
+svg.path {
 	color: lightskyblue;
 }
 
 .span {
 	text-align: center;
 	background-color: rgba(169, 169, 169, 0.5);
-	z-index: 2;
 }
 
 #menu-footer-menu {
@@ -485,5 +515,13 @@ path {
 
 .menu-item {
 	margin-right: 10px;
+}
+
+.menu-item a:visited {
+	color: green;
+}
+
+.menu-item a:active {
+	color: red;
 }
 @import 'bulma';
