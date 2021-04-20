@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom'
 import PriceCheckBox from './PriceCheckBox'
 import GenreCheckBox from './GenreCheckBox'
 import RatingCheckBox from './RatingCheckBox'
-// import OtherNavbar from '../common/OtherNavbar'
+
 import Auth from '../../lib/Auth'
 
 const genres = [
@@ -103,7 +103,6 @@ const Books = () => {
   const [genresToFilter, setGenresToFilter] = useState([])
   const [ratingsToFilter, setRatingsToFilter] = useState([])
   const [books, setBooks] = useState([])
-  // const [title, setTitle] = useState('Eze goes to School')
 
   useEffect(() => {
     const listBooks = async () => {
@@ -164,10 +163,6 @@ const Books = () => {
       return passedPrevFilter && currFilterFunc(book)
     }, true)
 
-  // const handleBooks = (e) => {
-  //   setTitle(e.target.value)
-  // }
-
   const handleSearch = (e) => {
     setSearchTerm(new RegExp(e.target.value, 'i'))
   }
@@ -201,14 +196,6 @@ const Books = () => {
       : ratingsToFilter.filter((rating) => rating !== value)
     setRatingsToFilter(ratingsCheckBox)
   }
-
-  // const currentGenres = () => {
-  //   const currentBook = books.data.find((book) => book.title === title)
-  //   if (!currentBook) return
-  //   return currentBook.genres.map((genre) => (
-  //     <option key={genre.id}>{genre.name}</option>
-  //   ))
-  // }
 
   if (books.length === 0) return <h1>Please wait while loading...</h1>
 
@@ -281,38 +268,6 @@ const Books = () => {
                   </p>
                 </div>
               </div>
-              {/* <div className='column is-one-third'>
-                <div className='field'>
-                  <div className='control'>
-                    <div className='select books'>
-                      <select
-                        onChange={handleBooks}
-                        value={title}>
-                        {books.data.map((book) => (
-                          <option key={book.id}>
-                            {book.title}
-                          </option>
-                        ))}
-                      </select>
-                    </div>
-                  </div>
-                </div>
-              </div> */}
-              {/* <div className='column is-one-third'>
-                <div className='field'>
-                  <div className='control'>
-                    <div className='select genre'>
-                      <select>
-                        {currentGenres((genre) => (
-                          <option key={genre.id}>
-                            {genre}
-                          </option>
-                        ))}
-                      </select>
-                    </div>
-                  </div>
-                </div>
-              </div> */}
             </div>
             <br />
             <div className='columns is-multiline is-desktop is-mobile'>
