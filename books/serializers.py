@@ -28,12 +28,17 @@ class GenreSerializer(serializers.ModelSerializer):
         model = Genre
         fields = ('id', 'name')
 
-
+# class CommentSerializer(serializers.ModelSerializer):
+#     user = UserSerializer(read_only=True)
+#     class Meta:
+#         model = Comment
+#         fields = ('id', 'content', 'rating', 'user', 'timestamp')
 class BookSerializer(serializers.ModelSerializer):
 
     author = NestedAuthorSerializer()
     genres = GenreSerializer(many=True)
     user = UserSerializer(read_only=True)
+    # comment = CommentSerializer()
 
     class Meta:
         model = Book

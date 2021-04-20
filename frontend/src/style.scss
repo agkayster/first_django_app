@@ -498,6 +498,7 @@ th:hover {
 .fa-facebook-square:hover,
 .fa-linkedin-in:hover {
 	font-size: 30px;
+	color: chocolate;
 }
 
 .fa-facebook-square {
@@ -515,6 +516,7 @@ svg.path {
 .span {
 	text-align: center;
 	background-color: rgba(169, 169, 169, 0.5);
+	z-index: 5;
 }
 
 #menu-footer-menu {
@@ -533,5 +535,63 @@ svg.path {
 
 .menu-item a:active {
 	color: red;
+}
+
+//==============================================================================================> About
+.section.about {
+	height: 160vh;
+}
+
+.box.about-box {
+	background-color: blanchedalmond;
+}
+
+.description {
+	text-align: center;
+}
+
+h2.title.is-3 {
+	text-align: center;
+}
+
+.section.about {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.about-site {
+	display: inline-flex;
+	flex-direction: row;
+	// flex-wrap: wrap;
+	justify-content: space-around;
+	margin-left: 100px;
+}
+
+.explain {
+	border: 2px hidden black;
+	width: 50%;
+	align-self: center;
+}
+
+.fa-github-square {
+	font-size: 25px;
+	transition: font-size 2s;
+}
+
+.fa-github-square:hover {
+	font-size: 30px;
+	color: chocolate;
+}
+
+.developer-about {
+	text-align: center;
+}
+
+.about-ack {
+	text-align: center;
+}
+
+.about-rep {
+	text-align: center;
 }
 @import 'bulma';
