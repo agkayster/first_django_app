@@ -158,15 +158,15 @@
     "title": "Love You Forever",
     "author": 3,
     "image": "https://upload.wikimedia.org/wikipedia/en/thumb/e/e5/LoveYouForever.png/220px-LoveYouForever.png",
-    "summary": "The story details the cycle of life by chronicling the experiences of a young son and his mother throughout the course of the boy's life and describing the exasperating behaviour exhibited by him throughout his youth. In spite of her occasional aggravation caused by her son's behaviour, the mother nonetheless visits his bedroom nightly to cradle him in her arms, and sing a brief lullaby promising to always love him. After her son enters adulthood and leaves home, his elderly mother occasionally sneaks into his bedroom at night to croon her customary lullaby. However she gradually grows old and frail, and her grown son visits his feeble, sickly mother for the final time. When he first arrives, his mother tries to sing her lullaby to him, but she is too weak to finish. He then cradles her in his arms and sings an altered rendition of her lullaby in reciprocation of the unconditional love that she had shown him throughout his life, vowing to always love her in return.",
+    "summary": "The story details the cycle of life by chronicling the experiences of a young son and his mother throughout the course of the boy's life and describing the exasperating behavior exhibited by him throughout his youth. In spite of her occasional aggravation caused by her son's behavior, the mother nonetheless visits his bedroom nightly to cradle him in her arms, and sing a brief lullaby promising to always love him. After her son enters adulthood and leaves home, his elderly mother occasionally sneaks into his bedroom at night to croon her customary lullaby. However she gradually grows old and frail, and her grown son visits his feeble, sickly mother for the final time. When he first arrives, his mother tries to sing her lullaby to him, but she is too weak to finish. He then cradles her in his arms and sings an altered rendition of her lullaby in reciprocation of the unconditional love that she had shown him throughout his life, vowing to always love her in return.",
     "price_currency": "GBP",
     "price": "2.99",
     "user": 1,
     "rating": 4,
     "genres": [
+      2,
       3,
-      4,
-      6
+      5
     ]
   }
 },
@@ -177,15 +177,14 @@
     "title": "There There",
     "author": 4,
     "image": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1522275340l/39673556._SY475_.jpg",
-    "summary": "Fierce, angry, funny, heartbreaking - Tommy Orange's first novel is a wondrous and shattering portrait of an America few of us have ever seen, and it introduces a brilliant new author at the start of a major career. \r\nThere There, is a relentlessly paced multigenerational story about violence and recovery, memory and identity, and the beauty and despair woven into the history of a nation and its people. It tells the story of twelve characters, each of whom has private reasons for traveling to the Big Oakland Powwow. \r\nJacquie Red Feather is newly sober and trying to make it back to the family she left behind in shame. Dene Oxendene is pulling his life back together after his uncle's death and has come to work at the powwow to honor his uncle's memory. \r\nOpal Viola Victoria Bear Shield has come to watch her nephew Orvil, who has taught himself traditional Indian dance through YouTube videos and has come to the powwow to dance in public for the very first time. There will be glorious communion and a spectacle of sacred tradition and pageantry. \r\nAnd there will be sacrifice, and heroism, and unspeakable loss.",
+    "summary": "Fierce, angry, funny, heartbreaking - Tommy Orange's first novel is a wondrous and shattering portrait of an America few of us have ever seen, and it introduces a brilliant new author at the start of a major career.\r\nThere There, is a relentlessly paced multigenerational story about violence and recovery, memory and identity, and the beauty and despair woven into the history of a nation and its people. It tells the story of twelve characters, each of whom has private reasons for traveling to the Big Oakland Powwow.\r\nJacquie Red Feather is newly sober and trying to make it back to the family she left behind in shame. Dene Oxendene is pulling his life back together after his uncle's death and has come to work at the powwow to honor his uncle's memory. \r\nOpal Viola Victoria Bear Shield has come to watch her nephew Orvil, who has taught himself traditional Indian dance through YouTube videos and has come to the powwow to dance in public for the very first time. There will be glorious communion and a spectacle of sacred tradition and pageantry. \r\nAnd there will be sacrifice, and heroism, and unspeakable loss.",
     "price_currency": "GBP",
     "price": "1.99",
     "user": 1,
     "rating": 2,
     "genres": [
       2,
-      5,
-      6
+      5
     ]
   }
 },
@@ -196,7 +195,7 @@
     "title": "My Dark Vanessa",
     "author": 5,
     "image": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1559847482l/46186137._SY475_.jpg",
-    "summary": "Exploring the psychological dynamics of the relationship between a precocious yet teenage girl and her magnetic and manipulative teacher, a brilliant, all-consuming read that marks the explosive debut of an extraordinary new writer.\r\nBright, ambitious, and yearning for adulthood, fifteen-year-old Vanessa Wye becomes entangled in an affair with Jacob Strane, her magnetic and guileful forty-two-year-old English teacher.\r\nAmid the rising wave of allegations against powerful men, a reckoning is coming due. Strane has been accused of sexual abuse by a former student, who reaches out to Vanessa, and now Vanessa suddenly finds herself facing an impossible choice: remain silent, firm in the belief that her teenage self willingly engaged in this relationship, or redefine herself and the events of her past. \r\nBut how can Vanessa reject her first love, the man who fundamentally transformed her and has been a persistent presence in her life? Is it possible that the man she loved as a teenager and who professed to worship only her may be far different from what she has always believed?",
+    "summary": "Exploring the psychological dynamics of the relationship between a precocious yet teenage girl and her magnetic and manipulative teacher, a brilliant, all-consuming read that marks the explosive debut of an extraordinary new writer.\r\nBright, ambitious, and yearning for adulthood, fifteen-year-old Vanessa Wye becomes entangled in an affair with Jacob Strane, her magnetic and guileful forty-two-year-old English teacher.\r\nAmid the rising wave of allegations against powerful men, a reckoning is coming due. Strane has been accused of sexual abuse by a former student, who reaches out to Vanessa, and now Vanessa suddenly finds herself facing an impossible choice: remain silent, firm in the belief that her teenage self willingly engaged in this relationship, or redefine herself and the events of her past.\r\nBut how can Vanessa reject her first love, the man who fundamentally transformed her and has been a persistent presence in her life? Is it possible that the man she loved as a teenager and who professed to worship only her may be far different from what she has always believed?",
     "price_currency": "GBP",
     "price": "3.99",
     "user": 1,
@@ -214,7 +213,7 @@
     "title": "Lying Life of Adults",
     "author": 6,
     "image": "https://i.imgur.com/rumrzpO.jpg",
-    "summary": "Unlike the Neapolitan quartet, which spans more than half a century in the lives of two friends, The Lying Life of Adults concerns itself with adolescence\u2014a time when deception and self-deception loom large, and growing up means learning to catch oneself and others in the act of lying.",
+    "summary": "Unlike the Neapolitan quartet, which spans more than half a century in the lives of two friends, The Lying Life of Adults concerns itself with adolescence, a time when deception and self-deception loom large and growing up means learning to catch oneself and others in the act of lying.",
     "price_currency": "GBP",
     "price": "3.45",
     "user": 1,
@@ -256,7 +255,7 @@
     "user": 1,
     "rating": 5,
     "genres": [
-      4,
+      1,
       6
     ]
   }
