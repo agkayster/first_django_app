@@ -12,6 +12,7 @@ pylint = "*"
 pyjwt = "*"
 psycopg2-binary = "*"
 django-heroku = "*"
+django-money = "*"
 
 [requires]
 python_version = "3.7"

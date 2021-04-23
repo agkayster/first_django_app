@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "ad090290383d714e1590b6875a47f7c1b0fbf6eb253cd49a1b64b5b30fcf9a08"
+            "sha256": "71a2db890ae271f1894a12516230a3a920d6dc041e6b16484d88ee5e1ad660b5"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -54,6 +54,14 @@
             ],
             "index": "pypi",
             "version": "==0.3.1"
+        },
+        "django-money": {
+            "hashes": [
+                "sha256:3b8fc751c8ae27cf877b8f3770ade1b63af97ee49a32ac08a6a1bc6d8d59f089",
+                "sha256:a363ce16a23e403befdafa9895b2f538a10f9d390b160f12140094a6dfd55246"
+            ],
+            "index": "pypi",
+            "version": "==1.3.1"
         },
         "djangorestframework": {
             "hashes": [
@@ -167,6 +175,13 @@
             ],
             "index": "pypi",
             "version": "==2.8.6"
+        },
+        "py-moneyed": {
+            "hashes": [
+                "sha256:c6691b914a5e4b5b2335cf113620479a52cc82988c0e143435a7c5c7d60cd4ad",
+                "sha256:ec73795171919d537880a33c44d07fcdf0a5225e8368684fe02f0e75a6404742"
+            ],
+            "version": "==0.8.0"
         },
         "pyjwt": {
             "hashes": [
