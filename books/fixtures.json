@@ -72,6 +72,15 @@
   }
 },
 {
+  "model": "books.author",
+  "pk": 9,
+  "fields": {
+    "firstname": "Harper",
+    "middlename": "",
+    "lastname": "Lee"
+  }
+},
+{
   "model": "books.genre",
   "pk": 1,
   "fields": {
@@ -256,6 +265,25 @@
     "rating": 5,
     "genres": [
       1,
+      5
+    ]
+  }
+},
+{
+  "model": "books.book",
+  "pk": 9,
+  "fields": {
+    "title": "To Kill A Mockingbird",
+    "author": 9,
+    "image": "https://i.imgur.com/DCTJUOE.jpg",
+    "summary": "Harper Lee's classic tale set in 1930s Alabama is perhaps the seminal text on racial tensions in the Deep South. The story follows the white lawyer Atticus Finch as he attempts to save the life of Tom Robinson, a black man falsely accused of raping a white woman. By being narrated by Finch's six-year-old daughter Scout, the unfairness and incomprehensibility of the situation is illuminated further, seen through the eyes of an innocent child.",
+    "price_currency": "GBP",
+    "price": "1.79",
+    "user": 2,
+    "rating": 4,
+    "genres": [
+      2,
+      4,
       5
     ]
   }
