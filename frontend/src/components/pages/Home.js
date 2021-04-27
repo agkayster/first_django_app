@@ -4,34 +4,28 @@ import { Link } from 'react-router-dom'
 class Home extends Component {
   render() {
     return (
-      <div className='hero-image'>
-        <section>
+      <section className='hero'>
+        <div className='hero-image'>
           <div className='hero-body'>
-            <div className='container'>
-              <div className='home'>
-                <h1 className='home subtitle is-2'>
-                  <strong>
-										Get to know everything <br />
-										about the books you enjoy reading...
-                  </strong>
-                </h1>
-                <h3 className='home subtitle is-5'>
-									Bookatee helps those who love to read,
-                  <br />
-									get the books they want to read from
-                  <br />
-									anywhere in the world.
-                </h3>
-                <Link
-                  to='/register'
-                  className='button is-primary home'>
-									Create your account
-                </Link>
-              </div>
-            </div>
+            <p className='home subtitle is-2'>
+              <strong>
+								Get to know everything <br />
+								about the books you enjoy reading...
+              </strong>
+            </p>
+            <p className='home subtitle is-5'>
+							Bookatee helps those who love to read,
+              <br />
+							get the books they want to read from
+              <br />
+							anywhere in the world.
+            </p>
+            <Link to='/register' className='button is-primary home'>
+							Create your account
+            </Link>
           </div>
-        </section>
-      </div>
+        </div>
+      </section>
     )
   }
 }
