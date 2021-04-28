@@ -612,7 +612,7 @@ h2.title.is-3 {
 
 //=================================================================================> Home media query
 
-@media only screen and (min-width: 280px) and (max-width: 1024px) {
+@media only screen and (min-width: 375px) and (max-width: 768px) {
 	body {
 		overflow-x: hidden;
 	}
@@ -672,15 +672,13 @@ h2.title.is-3 {
 
 	//=============================================================================> Register media query
 	.registerForm {
+		text-align: center;
 		width: 80%;
+		height: 570px;
 	}
 
 	.FormField__Button {
-		padding: 2px 70px;
-	}
-
-	.registerForm {
-		text-align: center;
+		padding: 2px 20px;
 	}
 
 	.FormField {
@@ -690,6 +688,1255 @@ h2.title.is-3 {
 	.FormTitle__Link {
 		margin-left: 20px;
 	}
+
+	.loginForm {
+		width: 65%;
+	}
+
+	.login {
+		padding-top: 30px;
+	}
+
+	//===============================================================================> About media query
+
+	.section.about {
+		height: 215vh;
+	}
+
+	.about-site {
+		flex-direction: column;
+		// flex-wrap: wrap;
+		justify-content: space-around;
+		text-align: center;
+		margin-left: 0px;
+	}
+
+	.explain {
+		width: 100%;
+		align-self: auto;
+		font-size: small;
+		text-align: justify;
+		padding-right: 20px;
+	}
+
+	.card.about {
+		margin: 20px 20px;
+	}
 }
+
+/* #### Mobile Phones Portrait #### */
+// @media screen and (max-device-width: 480px) and (orientation: portrait) {
+// 	/* some CSS here */
+// 	body {
+// 		overflow-x: hidden;
+// 	}
+
+// 	.span {
+// 		text-align: center;
+// 		background-color: rgba(169, 169, 169, 0.5);
+// 		z-index: 5;
+// 		height: 345px;
+// 		align-content: space-around;
+// 		padding: 20px;
+// 	}
+
+// 	.hero-image {
+// 		background: url('./components/assets/books1_background.jpg') repeat;
+// 		background-size: auto;
+// 		background-position: center bottom;
+// 		background-attachment: fixed;
+// 		position: relative;
+// 		height: 100vh;
+// 		z-index: 0;
+// 		width: 100%;
+// 	}
+
+// 	.home.subtitle.is-2 {
+// 		margin-top: 15px;
+// 		font-size: 25px;
+// 	}
+
+// 	.home.subtitle.is-5 {
+// 		font-size: 15px;
+// 	}
+
+// 	p.cookies {
+// 		padding-right: 20px;
+// 	}
+
+// 	.button.is-primary.home {
+// 		font-size: 12px;
+// 	}
+
+// 	.navbar.other:hover {
+// 		background-color: rgba(68, 83, 102, 0.75);
+// 	}
+
+// 	div.navbar-menu.is-active {
+// 		background-color: rgba(68, 83, 102, 0.9);
+// 	}
+
+// 	a.navbar-item {
+// 		color: white;
+// 	}
+
+// 	a.navbar-item:hover {
+// 		color: burlywood;
+// 	}
+
+// 	//=============================================================================> Register media query
+// 	.registerForm {
+// 		text-align: center;
+// 		width: 80%;
+// 		height: 570px;
+// 	}
+
+// 	.FormField__Button {
+// 		padding: 2px 20px;
+// 	}
+
+// 	.FormField {
+// 		margin-bottom: 17px;
+// 	}
+
+// 	.FormTitle__Link {
+// 		margin-left: 20px;
+// 	}
+
+// 	.loginForm {
+// 		width: 65%;
+// 	}
+
+// 	.login {
+// 		padding-top: 30px;
+// 	}
+
+// 	//===============================================================================> About media query
+
+// 	.section.about {
+// 		height: 245vh;
+// 	}
+
+// 	.about-site {
+// 		flex-direction: column;
+// 		// flex-wrap: wrap;
+// 		justify-content: space-around;
+// 		text-align: center;
+// 		margin-left: 0px;
+// 	}
+
+// 	.explain {
+// 		width: 100%;
+// 		align-self: auto;
+// 		font-size: small;
+// 		text-align: justify;
+// 		padding-right: 20px;
+// 	}
+
+// 	.card.about {
+// 		margin: 20px -10px;
+// 	}
+// }
+
+// /* #### Mobile Phones Landscape #### */
+// @media screen and (max-device-width: 640px) and (orientation: landscape) {
+// 	/* some CSS here */
+// 	body {
+// 		overflow-x: hidden;
+// 	}
+
+// 	.span {
+// 		text-align: center;
+// 		background-color: rgba(169, 169, 169, 0.5);
+// 		z-index: 5;
+// 		height: 345px;
+// 		align-content: space-around;
+// 		padding: 20px;
+// 	}
+
+// 	.hero-image {
+// 		background: url('./components/assets/books1_background.jpg') repeat;
+// 		background-size: auto;
+// 		background-position: center bottom;
+// 		background-attachment: fixed;
+// 		position: relative;
+// 		height: 100vh;
+// 		z-index: 0;
+// 		width: 100%;
+// 	}
+
+// 	.home.subtitle.is-2 {
+// 		margin-top: 15px;
+// 		font-size: 25px;
+// 	}
+
+// 	.home.subtitle.is-5 {
+// 		font-size: 15px;
+// 	}
+
+// 	p.cookies {
+// 		padding-right: 20px;
+// 	}
+
+// 	.button.is-primary.home {
+// 		font-size: 12px;
+// 	}
+
+// 	.navbar.other:hover {
+// 		background-color: rgba(68, 83, 102, 0.75);
+// 	}
+
+// 	div.navbar-menu.is-active {
+// 		background-color: rgba(68, 83, 102, 0.9);
+// 	}
+
+// 	a.navbar-item {
+// 		color: white;
+// 	}
+
+// 	a.navbar-item:hover {
+// 		color: burlywood;
+// 	}
+
+// 	//=============================================================================> Register media query
+// 	.registerForm {
+// 		text-align: center;
+// 		width: 80%;
+// 		height: 570px;
+// 	}
+
+// 	.FormField__Button {
+// 		padding: 2px 20px;
+// 	}
+
+// 	.FormField {
+// 		margin-bottom: 17px;
+// 	}
+
+// 	.FormTitle__Link {
+// 		margin-left: 20px;
+// 	}
+
+// 	.loginForm {
+// 		width: 65%;
+// 	}
+
+// 	.login {
+// 		padding-top: 30px;
+// 	}
+
+// 	//===============================================================================> About media query
+
+// 	.section.about {
+// 		height: 245vh;
+// 	}
+
+// 	.about-site {
+// 		flex-direction: column;
+// 		// flex-wrap: wrap;
+// 		justify-content: space-around;
+// 		text-align: center;
+// 		margin-left: 0px;
+// 	}
+
+// 	.explain {
+// 		width: 100%;
+// 		align-self: auto;
+// 		font-size: small;
+// 		text-align: justify;
+// 		padding-right: 20px;
+// 	}
+
+// 	.card.about {
+// 		margin: 20px -10px;
+// 	}
+// }
+
+// /* #### Mobile Phones Portrait or Landscape #### */
+// @media screen and (max-device-width: 640px) {
+// 	/* some CSS here */
+// 	body {
+// 		overflow-x: hidden;
+// 	}
+
+// 	.span {
+// 		text-align: center;
+// 		background-color: rgba(169, 169, 169, 0.5);
+// 		z-index: 5;
+// 		height: 345px;
+// 		align-content: space-around;
+// 		padding: 20px;
+// 	}
+
+// 	.hero-image {
+// 		background: url('./components/assets/books1_background.jpg') repeat;
+// 		background-size: auto;
+// 		background-position: center bottom;
+// 		background-attachment: fixed;
+// 		position: relative;
+// 		height: 100vh;
+// 		z-index: 0;
+// 		width: 100%;
+// 	}
+
+// 	.home.subtitle.is-2 {
+// 		margin-top: 15px;
+// 		font-size: 25px;
+// 	}
+
+// 	.home.subtitle.is-5 {
+// 		font-size: 15px;
+// 	}
+
+// 	p.cookies {
+// 		padding-right: 20px;
+// 	}
+
+// 	.button.is-primary.home {
+// 		font-size: 12px;
+// 	}
+
+// 	.navbar.other:hover {
+// 		background-color: rgba(68, 83, 102, 0.75);
+// 	}
+
+// 	div.navbar-menu.is-active {
+// 		background-color: rgba(68, 83, 102, 0.9);
+// 	}
+
+// 	a.navbar-item {
+// 		color: white;
+// 	}
+
+// 	a.navbar-item:hover {
+// 		color: burlywood;
+// 	}
+
+// 	//=============================================================================> Register media query
+// 	.registerForm {
+// 		text-align: center;
+// 		width: 80%;
+// 		height: 570px;
+// 	}
+
+// 	.FormField__Button {
+// 		padding: 2px 20px;
+// 	}
+
+// 	.FormField {
+// 		margin-bottom: 17px;
+// 	}
+
+// 	.FormTitle__Link {
+// 		margin-left: 20px;
+// 	}
+
+// 	.loginForm {
+// 		width: 65%;
+// 	}
+
+// 	.login {
+// 		padding-top: 30px;
+// 	}
+
+// 	//===============================================================================> About media query
+
+// 	.section.about {
+// 		height: 265vh;
+// 	}
+
+// 	.about-site {
+// 		flex-direction: column;
+// 		// flex-wrap: wrap;
+// 		justify-content: space-around;
+// 		text-align: center;
+// 		margin-left: 0px;
+// 	}
+
+// 	.explain {
+// 		width: 100%;
+// 		align-self: auto;
+// 		font-size: small;
+// 		text-align: justify;
+// 		padding-right: 20px;
+// 	}
+
+// 	.card.about {
+// 		margin: 20px -10px;
+// 	}
+// }
+
+// /* #### iPhone 4+ Portrait or Landscape #### */
+// @media screen and (min-device-width: 320px) and (-webkit-min-device-pixel-ratio: 2) {
+// 	/* some CSS here */
+// 	body {
+// 		overflow-x: hidden;
+// 	}
+
+// 	.span {
+// 		text-align: center;
+// 		background-color: rgba(169, 169, 169, 0.5);
+// 		z-index: 5;
+// 		height: 345px;
+// 		align-content: space-around;
+// 		padding: 20px;
+// 	}
+
+// 	.hero-image {
+// 		background: url('./components/assets/books1_background.jpg') repeat;
+// 		background-size: auto;
+// 		background-position: center bottom;
+// 		background-attachment: fixed;
+// 		position: relative;
+// 		height: 100vh;
+// 		z-index: 0;
+// 		width: 100%;
+// 	}
+
+// 	.home.subtitle.is-2 {
+// 		margin-top: 15px;
+// 		font-size: 25px;
+// 	}
+
+// 	.home.subtitle.is-5 {
+// 		font-size: 15px;
+// 	}
+
+// 	p.cookies {
+// 		padding-right: 20px;
+// 	}
+
+// 	.button.is-primary.home {
+// 		font-size: 12px;
+// 	}
+
+// 	.navbar.other:hover {
+// 		background-color: rgba(68, 83, 102, 0.75);
+// 	}
+
+// 	div.navbar-menu.is-active {
+// 		background-color: rgba(68, 83, 102, 0.9);
+// 	}
+
+// 	a.navbar-item {
+// 		color: white;
+// 	}
+
+// 	a.navbar-item:hover {
+// 		color: burlywood;
+// 	}
+
+// 	//=============================================================================> Register media query
+// 	.registerForm {
+// 		text-align: center;
+// 		width: 80%;
+// 		height: 570px;
+// 	}
+
+// 	.FormField__Button {
+// 		padding: 2px 20px;
+// 	}
+
+// 	.FormField {
+// 		margin-bottom: 17px;
+// 	}
+
+// 	.FormTitle__Link {
+// 		margin-left: 20px;
+// 	}
+
+// 	.loginForm {
+// 		width: 65%;
+// 	}
+
+// 	.login {
+// 		padding-top: 30px;
+// 	}
+
+// 	//===============================================================================> About media query
+
+// 	.section.about {
+// 		height: 265vh;
+// 	}
+
+// 	.about-site {
+// 		flex-direction: column;
+// 		// flex-wrap: wrap;
+// 		justify-content: space-around;
+// 		text-align: center;
+// 		margin-left: 0px;
+// 	}
+
+// 	.explain {
+// 		width: 100%;
+// 		align-self: auto;
+// 		font-size: small;
+// 		text-align: justify;
+// 		padding-right: 20px;
+// 	}
+
+// 	.card.about {
+// 		margin: 20px -10px;
+// 	}
+// }
+
+// /* #### iPhone 5 Portrait or Landscape #### */
+// @media (device-height: 568px) and (device-width: 320px) and (-webkit-min-device-pixel-ratio: 2) {
+// 	/* some CSS here */
+// 	body {
+// 		overflow-x: hidden;
+// 	}
+
+// 	.span {
+// 		text-align: center;
+// 		background-color: rgba(169, 169, 169, 0.5);
+// 		z-index: 5;
+// 		height: 345px;
+// 		align-content: space-around;
+// 		padding: 20px;
+// 	}
+
+// 	.hero-image {
+// 		background: url('./components/assets/books1_background.jpg') repeat;
+// 		background-size: auto;
+// 		background-position: center bottom;
+// 		background-attachment: fixed;
+// 		position: relative;
+// 		height: 100vh;
+// 		z-index: 0;
+// 		width: 100%;
+// 	}
+
+// 	.home.subtitle.is-2 {
+// 		margin-top: 15px;
+// 		font-size: 25px;
+// 	}
+
+// 	.home.subtitle.is-5 {
+// 		font-size: 15px;
+// 	}
+
+// 	p.cookies {
+// 		padding-right: 20px;
+// 	}
+
+// 	.button.is-primary.home {
+// 		font-size: 12px;
+// 	}
+
+// 	.navbar.other:hover {
+// 		background-color: rgba(68, 83, 102, 0.75);
+// 	}
+
+// 	div.navbar-menu.is-active {
+// 		background-color: rgba(68, 83, 102, 0.9);
+// 	}
+
+// 	a.navbar-item {
+// 		color: white;
+// 	}
+
+// 	a.navbar-item:hover {
+// 		color: burlywood;
+// 	}
+
+// 	//=============================================================================> Register media query
+// 	.registerForm {
+// 		text-align: center;
+// 		width: 80%;
+// 		height: 570px;
+// 	}
+
+// 	.FormField__Button {
+// 		padding: 2px 20px;
+// 	}
+
+// 	.FormField {
+// 		margin-bottom: 17px;
+// 	}
+
+// 	.FormTitle__Link {
+// 		margin-left: 20px;
+// 	}
+
+// 	.loginForm {
+// 		width: 65%;
+// 	}
+
+// 	.login {
+// 		padding-top: 30px;
+// 	}
+
+// 	//===============================================================================> About media query
+
+// 	.section.about {
+// 		height: 265vh;
+// 	}
+
+// 	.about-site {
+// 		flex-direction: column;
+// 		// flex-wrap: wrap;
+// 		justify-content: space-around;
+// 		text-align: center;
+// 		margin-left: 0px;
+// 	}
+
+// 	.explain {
+// 		width: 100%;
+// 		align-self: auto;
+// 		font-size: small;
+// 		text-align: justify;
+// 		padding-right: 20px;
+// 	}
+
+// 	.card.about {
+// 		margin: 20px -10px;
+// 	}
+// }
+
+// /* #### iPhone 6 and 6 plus Portrait or Landscape #### */
+// @media (min-device-height: 667px) and (min-device-width: 375px) and (-webkit-min-device-pixel-ratio: 3) {
+// 	/* some CSS here */
+// 	body {
+// 		overflow-x: hidden;
+// 	}
+
+// 	.span {
+// 		text-align: center;
+// 		background-color: rgba(169, 169, 169, 0.5);
+// 		z-index: 5;
+// 		height: 345px;
+// 		align-content: space-around;
+// 		padding: 20px;
+// 	}
+
+// 	.hero-image {
+// 		background: url('./components/assets/books1_background.jpg') repeat;
+// 		background-size: auto;
+// 		background-position: center bottom;
+// 		background-attachment: fixed;
+// 		position: relative;
+// 		height: 100vh;
+// 		z-index: 0;
+// 		width: 100%;
+// 	}
+
+// 	.home.subtitle.is-2 {
+// 		margin-top: 15px;
+// 		font-size: 25px;
+// 	}
+
+// 	.home.subtitle.is-5 {
+// 		font-size: 15px;
+// 	}
+
+// 	p.cookies {
+// 		padding-right: 20px;
+// 	}
+
+// 	.button.is-primary.home {
+// 		font-size: 12px;
+// 	}
+
+// 	.navbar.other:hover {
+// 		background-color: rgba(68, 83, 102, 0.75);
+// 	}
+
+// 	div.navbar-menu.is-active {
+// 		background-color: rgba(68, 83, 102, 0.9);
+// 	}
+
+// 	a.navbar-item {
+// 		color: white;
+// 	}
+
+// 	a.navbar-item:hover {
+// 		color: burlywood;
+// 	}
+
+// 	//=============================================================================> Register media query
+// 	.registerForm {
+// 		text-align: center;
+// 		width: 80%;
+// 		height: 570px;
+// 	}
+
+// 	.FormField__Button {
+// 		padding: 2px 20px;
+// 	}
+
+// 	.FormField {
+// 		margin-bottom: 17px;
+// 	}
+
+// 	.FormTitle__Link {
+// 		margin-left: 20px;
+// 	}
+
+// 	.loginForm {
+// 		width: 65%;
+// 	}
+
+// 	.login {
+// 		padding-top: 30px;
+// 	}
+
+// 	//===============================================================================> About media query
+
+// 	.section.about {
+// 		height: 265vh;
+// 	}
+
+// 	.about-site {
+// 		flex-direction: column;
+// 		// flex-wrap: wrap;
+// 		justify-content: space-around;
+// 		text-align: center;
+// 		margin-left: 0px;
+// 	}
+
+// 	.explain {
+// 		width: 100%;
+// 		align-self: auto;
+// 		font-size: small;
+// 		text-align: justify;
+// 		padding-right: 20px;
+// 	}
+
+// 	.card.about {
+// 		margin: 20px -10px;
+// 	}
+// }
+
+// /* #### Tablets Portrait or Landscape #### */
+// @media screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+// 	/* some CSS here */
+// 	body {
+// 		overflow-x: hidden;
+// 	}
+
+// 	.span {
+// 		text-align: center;
+// 		background-color: rgba(169, 169, 169, 0.5);
+// 		z-index: 5;
+// 		height: 345px;
+// 		align-content: space-around;
+// 		padding: 20px;
+// 	}
+
+// 	.hero-image {
+// 		background: url('./components/assets/books1_background.jpg') repeat;
+// 		background-size: auto;
+// 		background-position: center bottom;
+// 		background-attachment: fixed;
+// 		position: relative;
+// 		height: 100vh;
+// 		z-index: 0;
+// 		width: 100%;
+// 	}
+
+// 	.home.subtitle.is-2 {
+// 		margin-top: 15px;
+// 		font-size: 25px;
+// 	}
+
+// 	.home.subtitle.is-5 {
+// 		font-size: 15px;
+// 	}
+
+// 	p.cookies {
+// 		padding-right: 20px;
+// 	}
+
+// 	.button.is-primary.home {
+// 		font-size: 12px;
+// 	}
+
+// 	.navbar.other:hover {
+// 		background-color: rgba(68, 83, 102, 0.75);
+// 	}
+
+// 	div.navbar-menu.is-active {
+// 		background-color: rgba(68, 83, 102, 0.9);
+// 	}
+
+// 	a.navbar-item {
+// 		color: white;
+// 	}
+
+// 	a.navbar-item:hover {
+// 		color: burlywood;
+// 	}
+
+// 	//=============================================================================> Register media query
+// 	.registerForm {
+// 		text-align: center;
+// 		width: 80%;
+// 		height: 570px;
+// 	}
+
+// 	.FormField__Button {
+// 		padding: 2px 20px;
+// 	}
+
+// 	.FormField {
+// 		margin-bottom: 17px;
+// 	}
+
+// 	.FormTitle__Link {
+// 		margin-left: 20px;
+// 	}
+
+// 	.loginForm {
+// 		width: 65%;
+// 	}
+
+// 	.login {
+// 		padding-top: 30px;
+// 	}
+
+// 	//===============================================================================> About media query
+
+// 	.section.about {
+// 		height: 265vh;
+// 	}
+
+// 	.about-site {
+// 		flex-direction: column;
+// 		// flex-wrap: wrap;
+// 		justify-content: space-around;
+// 		text-align: center;
+// 		margin-left: 0px;
+// 	}
+
+// 	.explain {
+// 		width: 100%;
+// 		align-self: auto;
+// 		font-size: small;
+// 		text-align: justify;
+// 		padding-right: 20px;
+// 	}
+
+// 	.card.about {
+// 		margin: 20px -10px;
+// 	}
+// }
+
+// /* #### Desktops #### */
+// @media screen and (min-width: 1024px) {
+// 	/* some CSS here */
+// 	body {
+// 		overflow-x: hidden;
+// 	}
+
+// 	//==============================================================================> Home Page
+
+// 	.hero-image {
+// 		background: url('./components/assets/books1_background.jpg') repeat;
+// 		background-size: auto;
+// 		background-position: right bottom;
+// 		background-attachment: fixed;
+// 		position: relative;
+// 		height: 100vh;
+// 		z-index: 0;
+// 		width: 100%;
+// 	}
+
+// 	div.hero-body {
+// 		flex-grow: 1;
+// 		flex-shrink: 0;
+// 		padding: 16px 24px;
+// 	}
+
+// 	.overlay {
+// 		background-color: black;
+// 		opacity: 0.4;
+// 		position: absolute;
+// 		// height: 722px;
+// 		top: 0;
+// 		left: 0;
+// 		bottom: 0;
+// 		right: 0;
+// 		z-index: -1;
+// 	}
+
+// 	.home.title.is-1 {
+// 		color: black;
+// 		position: relative;
+// 		z-index: -1;
+// 	}
+
+// 	.home.subtitle.is-2 {
+// 		color: black;
+// 		position: relative;
+// 		z-index: -1;
+// 		margin-top: 155px;
+// 		font-family: 'Public Sans', sans-serif;
+// 	}
+
+// 	.home.subtitle.is-5 {
+// 		color: black;
+// 		position: relative;
+// 		padding-right: -135px;
+// 		z-index: -1;
+// 		// text-shadow: 2px 2px 5px;
+// 	}
+
+// 	.button.is-primary.home {
+// 		position: absolute;
+// 		z-index: 1;
+// 		margin-top: 5px;
+// 		background-color: rgba(0, 0, 255, 0.8);
+// 		border-radius: 12px;
+// 		box-shadow: 10px 10px 8px #0000ff;
+// 	}
+
+// 	//=============================================================================> Register media query
+// 	.registerForm {
+// 		text-align: center;
+// 		width: 80%;
+// 		height: 570px;
+// 	}
+
+// 	.FormField__Button {
+// 		padding: 2px 20px;
+// 	}
+
+// 	.FormField {
+// 		margin-bottom: 17px;
+// 	}
+
+// 	.FormTitle__Link {
+// 		margin-left: 20px;
+// 	}
+
+// 	.loginForm {
+// 		width: 65%;
+// 	}
+
+// 	.login {
+// 		padding-top: 30px;
+// 	}
+
+// 	//===============================================================================> About media query
+
+// 	.section.about {
+// 		height: 160vh;
+// 	}
+
+// 	.box.about-box {
+// 		background-color: blanchedalmond;
+// 	}
+
+// 	.description {
+// 		text-align: center;
+// 	}
+
+// 	h2.title.is-3 {
+// 		text-align: center;
+// 	}
+
+// 	.section.about {
+// 		margin-left: auto;
+// 		margin-right: auto;
+// 	}
+
+// 	.about-site {
+// 		display: inline-flex;
+// 		flex-direction: row;
+// 		// flex-wrap: wrap;
+// 		justify-content: space-around;
+// 		margin-left: 100px;
+// 	}
+
+// 	.explain {
+// 		border: 2px hidden black;
+// 		width: 50%;
+// 		align-self: center;
+// 	}
+
+// 	.fa-github-square {
+// 		font-size: 25px;
+// 		transition: font-size 2s;
+// 	}
+
+// 	.fa-github-square:hover {
+// 		font-size: 30px;
+// 		color: chocolate;
+// 	}
+
+// 	.developer-about {
+// 		text-align: center;
+// 	}
+
+// 	.about-ack {
+// 		text-align: center;
+// 	}
+
+// 	.about-rep {
+// 		text-align: center;
+// 	}
+
+// 	//================================================================================> Footer media query
+
+// 	.icons {
+// 		display: inline-flex;
+// 		flex-direction: row;
+// 		flex-wrap: wrap;
+// 		padding-top: 20px;
+// 	}
+
+// 	.fa-twitter-square,
+// 	.fa-facebook-square,
+// 	.fa-linkedin-in {
+// 		font-size: 25px;
+// 		transition: font-size 2s;
+// 	}
+
+// 	.fa-twitter-square:hover,
+// 	.fa-facebook-square:hover,
+// 	.fa-linkedin-in:hover {
+// 		font-size: 30px;
+// 		color: chocolate;
+// 	}
+
+// 	.fa-facebook-square {
+// 		margin-left: 15px;
+// 	}
+
+// 	.fa-linkedin-in {
+// 		margin-left: 15px;
+// 	}
+
+// 	svg.path {
+// 		color: lightskyblue;
+// 	}
+
+// 	.span {
+// 		text-align: center;
+// 		background-color: rgba(169, 169, 169, 0.5);
+// 		z-index: 5;
+// 		height: 200px;
+// 		align-content: space-around;
+// 	}
+
+// 	#menu-footer-menu {
+// 		display: inline-flex;
+// 		flex-direction: row;
+// 		flex-wrap: wrap;
+// 		padding-top: 20px;
+// 	}
+
+// 	.menu-item {
+// 		margin-right: 10px;
+// 	}
+
+// 	.menu-item a:visited {
+// 		color: green;
+// 	}
+
+// 	.menu-item a:active {
+// 		color: red;
+// 	}
+
+// 	p.copyright {
+// 		padding-top: 20px;
+// 	}
+
+// 	p.cookies {
+// 		padding-top: 20px;
+// 	}
+
+// 	//====================================================================================> Register & Login
+
+// 	.registerForm {
+// 		display: flex;
+// 		flex-direction: column;
+// 		flex-wrap: wrap;
+// 		align-items: center;
+// 		justify-content: center;
+// 		width: 40%;
+// 		margin: auto;
+// 		height: 600px;
+// 		border: 5px solid grey;
+// 		border-radius: 12px;
+// 		background-color: rgba(139, 69, 19, 0.85);
+// 		z-index: 5;
+// 		position: relative;
+// 	}
+
+// 	.loginForm {
+// 		display: flex;
+// 		flex-direction: column;
+// 		flex-wrap: wrap;
+// 		align-items: center;
+// 		justify-content: center;
+// 		width: 40%;
+// 		margin: auto;
+// 		height: 400px;
+// 		border: 5px solid grey;
+// 		border-radius: 12px;
+// 		background-color: rgba(255, 165, 0, 0.85);
+// 		z-index: 5;
+// 		position: relative;
+// 	}
+
+// 	.FormField {
+// 		margin-bottom: 20px;
+// 	}
+
+// 	.FormFields {
+// 		margin-right: 15px;
+// 		margin-left: 35px;
+// 	}
+
+// 	.FormTitle {
+// 		margin-top: 20px;
+// 	}
+
+// 	.FormField__Label {
+// 		display: block;
+// 		text-transform: uppercase;
+// 		font-size: 0.9em;
+// 	}
+
+// 	.FormField__Label strong {
+// 		color: white;
+// 	}
+
+// 	.FormField__Input {
+// 		width: 85%;
+// 		background-color: white;
+// 		border: none;
+// 		color: black;
+// 		outline: none;
+// 		border-bottom: 1px solid #445366;
+// 		font-size: 1em;
+// 		font-weight: 300;
+// 		padding-bottom: 10px;
+// 		margin-top: 10px;
+// 	}
+
+// 	.FormField__Input::placeholder {
+// 		color: #616e7f;
+// 	}
+
+// 	.FormField__Button {
+// 		background-color: #52c4b9;
+// 		color: white;
+// 		border: none;
+// 		outline: none;
+// 		border-radius: 25px;
+// 		padding: 15px 70px;
+// 		font-size: 0.8em;
+// 		font-weight: 500;
+// 		margin-right: 10px;
+// 		margin-left: auto;
+// 		width: 45%;
+// 	}
+
+// 	.FormField__Link {
+// 		color: whitesmoke;
+// 		text-decoration: none;
+// 		display: inline-block;
+// 		border-bottom: 1.5px solid #225e62;
+// 		padding-bottom: 5px;
+// 	}
+
+// 	.FormField__CheckboxLabel {
+// 		color: #646f7d;
+// 		font-size: 0.9em;
+// 	}
+
+// 	.FormField__Checkbox {
+// 		position: relative;
+// 		top: 1.5px;
+// 	}
+
+// 	.FormField__TermsLink {
+// 		color: whitesmoke;
+// 		border-bottom: 1px solid #199087;
+// 		text-decoration: none;
+// 		display: inline-block;
+// 		padding-bottom: 2px;
+// 		margin-left: 5px;
+// 	}
+
+// 	.FormTitle__Link {
+// 		font-size: 30px;
+// 		color: white;
+// 		margin-top: 20px;
+// 	}
+
+// 	.FormField__Button.mr-20.Login {
+// 		width: 85%;
+// 		margin-right: auto;
+// 		margin-left: auto;
+// 	}
+
+// 	.checked {
+// 		margin-left: 5px;
+// 		color: whitesmoke;
+// 	}
+
+// 	.NewBok {
+// 		margin-right: 5px;
+// 		color: whitesmoke;
+// 	}
+
+// 	.NewCreate {
+// 		// padding-right: 25px;
+// 		text-align: center;
+// 		margin-left: auto;
+// 		margin-right: auto;
+// 	}
+
+// 	.register {
+// 		background: url('./components/assets/Register_page.jpg') fixed bottom;
+// 		background-size: cover;
+// 		background-position: 50% 50%;
+// 		height: 100vh;
+// 		padding-top: 50px;
+// 		z-index: 2;
+// 		position: relative;
+// 	}
+
+// 	.login {
+// 		background: url('./components/assets/login_page.jpg') fixed bottom;
+// 		background-size: cover;
+// 		background-position: 50% 50%;
+// 		height: 100vh;
+// 		padding-top: 50px;
+// 		z-index: 2;
+// 		position: relative;
+// 	}
+
+// 	.container {
+// 		height: 10px;
+// 	}
+
+// 	//===================================================================================> Navbar
+
+// 	$navbar-background-color: transparent;
+// 	$navbar-item-color: black;
+// 	$navbar-item-hover-background-color: transparent;
+// 	$navbar-dropdown-background-color: grey;
+
+// 	.button.register {
+// 		margin-top: 5px;
+// 	}
+
+// 	// .navbar-item.register {
+// 	// 	background-color: red;
+// 	// }
+
+// 	.navbar.other {
+// 		background-color: rgba(169, 169, 169, 0.5);
+// 		-webkit-transition: background-color 500ms linear;
+// 		-moz-transition: background-color 500ms linear;
+// 		-ms-transition: background-color 500ms linear;
+// 		transition: background-color 500ms linear;
+// 	}
+// }
 
 @import 'bulma';
