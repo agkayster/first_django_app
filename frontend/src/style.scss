@@ -653,6 +653,43 @@ h2.title.is-3 {
 	.button.is-primary.home {
 		font-size: 12px;
 	}
+
+	.navbar.other:hover {
+		background-color: rgba(68, 83, 102, 0.75);
+	}
+
+	div.navbar-menu.is-active {
+		background-color: rgba(68, 83, 102, 0.9);
+	}
+
+	a.navbar-item {
+		color: white;
+	}
+
+	a.navbar-item:hover {
+		color: burlywood;
+	}
+
+	//=============================================================================> Register media query
+	.registerForm {
+		width: 80%;
+	}
+
+	.FormField__Button {
+		padding: 2px 70px;
+	}
+
+	.registerForm {
+		text-align: center;
+	}
+
+	.FormField {
+		margin-bottom: 17px;
+	}
+
+	.FormTitle__Link {
+		margin-left: 20px;
+	}
 }
 
 @import 'bulma';
