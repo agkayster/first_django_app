@@ -220,6 +220,7 @@ const Books = () => {
               />
             ))}
           </div>
+
           <div className='control price'>
             <p className='menu-label is-centered price'>
               <strong>Prices(£)</strong>
@@ -235,6 +236,7 @@ const Books = () => {
               />
             ))}
           </div>
+
           <div className='control rating'>
             <p className='menu-label is-centered rating'>
               <strong>Rating(Over 5)</strong>
