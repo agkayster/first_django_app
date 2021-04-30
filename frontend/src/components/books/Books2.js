@@ -207,7 +207,7 @@ const Books = () => {
       <div className='book'>
         <aside className='menu'>
           <div className='control genre'>
-            <p className='menu-label Genre is-centered'>
+            <p className='menu-label is-centered genre'>
               <strong>Genres</strong>
             </p>
             {genres.map((genre) => (
@@ -221,7 +221,7 @@ const Books = () => {
             ))}
           </div>
           <div className='control price'>
-            <p className='menu-label is-centered'>
+            <p className='menu-label is-centered price'>
               <strong>Prices(£)</strong>
             </p>
             {prices.map((price) => (

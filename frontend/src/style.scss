@@ -612,7 +612,7 @@ h2.title.is-3 {
 
 //=================================================================================> Home media query
 
-@media only screen and (min-width: 375px) and (max-width: 768px) {
+@media only screen and (min-width: 320px) and (max-width: 768px) {
 	body {
 		overflow-x: hidden;
 	}
@@ -768,8 +768,9 @@ h2.title.is-3 {
 		display: inline-flex;
 		flex-direction: column;
 		flex-wrap: wrap;
-		font-size: 90.5%;
+		font-size: 85.5%;
 		padding-left: 0px;
+		width: 50%;
 	}
 
 	.section {
@@ -783,6 +784,22 @@ h2.title.is-3 {
 	p.menu-label.is-centered.rating {
 		margin-left: 2px;
 		padding-left: 2px;
+	}
+
+	p.menu-label.is-centered.genre {
+		margin-left: 2px;
+		padding-left: 12px;
+		width: 50%;
+	}
+
+	p.menu-label.is-centered.price {
+		margin-left: 2px;
+		padding-left: 12px;
+		width: 50%;
+	}
+
+	.checkbox {
+		margin: 0px 12px;
 	}
 }
 
