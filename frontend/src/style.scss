@@ -757,6 +757,7 @@ h2.title.is-3 {
 	.book {
 		display: inline-flex;
 		flex-direction: column;
+		width: 100%;
 	}
 
 	.menu {
@@ -766,7 +767,7 @@ h2.title.is-3 {
 		flex-wrap: nowrap;
 		overflow-x: visible;
 		width: 120%;
-		height: 35%;
+		height: 40%;
 	}
 
 	.control.price {
