@@ -236,7 +236,7 @@ const Books = () => {
             ))}
           </div>
           <div className='control rating'>
-            <p className='menu-label is-centered'>
+            <p className='menu-label is-centered rating'>
               <strong>Rating(Over 5)</strong>
             </p>
             {ratings.map((rating) => (

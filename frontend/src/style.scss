@@ -742,6 +742,41 @@ h2.title.is-3 {
 	.section.show {
 		margin-left: 0px;
 	}
+
+	//============================================================================> Books Index media query
+
+	.book {
+		display: inline-flex;
+		flex-direction: column;
+	}
+
+	.menu {
+		position: relative;
+		display: inline-flex;
+		flex-direction: row;
+		flex-wrap: nowrap;
+		overflow-x: visible;
+		width: 120%;
+		height: 35%;
+	}
+
+	.control.price {
+		margin-top: 0px;
+	}
+
+	.rating strong {
+		display: inline-flex;
+		flex-direction: column;
+		flex-wrap: wrap;
+	}
+
+	.section {
+		margin-left: 0px;
+	}
+
+	div.card {
+		margin: 20px 0px;
+	}
 }
 
 /* #### Mobile Phones Portrait #### */
