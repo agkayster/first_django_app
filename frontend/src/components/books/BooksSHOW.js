@@ -53,7 +53,7 @@ class BooksShow extends Component {
                   <div className='showpage'>
                     <header>
                       <p className='title is-3'>
-											Title: {book.title}
+												Title: {book.title}
                       </p>
                       <hr />
                     </header>
@@ -69,7 +69,9 @@ class BooksShow extends Component {
                       <br />
                       <table className='table-show'>
                         <tr>
-                          <th>Rating: {book.rating}/5</th>
+                          <th>
+														Rating: {book.rating}/5
+                          </th>
                         </tr>
                         <tr>
                           <th>
@@ -89,7 +91,7 @@ class BooksShow extends Component {
                         <tr>
                           <th>
                             <h2 className='subtitle is-4'>
-														Author:{' '}
+															Author:{' '}
                               {`${book.author.firstname} ${book.author.lastname}`}
                             </h2>
                           </th>
@@ -97,21 +99,24 @@ class BooksShow extends Component {
                         <tr>
                           <th>
                             <h2 className='subtitle is-4'>
-														Genres: {currentBook}
+															Genres:{' '}
+                              {currentBook}
                             </h2>
                           </th>
                         </tr>
                         <tr>
                           <th>
                             <h2 className='subtitle is-4'>
-														Price(£): {book.price}
+															Price(£):{' '}
+                              {book.price}
                             </h2>
                           </th>
                         </tr>
                         <tr>
                           <th>
-                            <h2 className='subtitle is-4'>
-														Summary: {book.summary}
+                            <h2 className='subtitle is-4 summary-show'>
+															Summary:{' '}
+                              {book.summary}
                             </h2>
                           </th>
                         </tr>
@@ -121,10 +126,10 @@ class BooksShow extends Component {
                             <Link
                               className='button'
                               to={`/books/${book.id}/edit`}>
-														Edit
+															Edit
                             </Link>
                             <button className='button is-danger'>
-														Delete
+															Delete
                             </button>
                           </div>
                         )}
