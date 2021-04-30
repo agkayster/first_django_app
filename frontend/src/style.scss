@@ -768,6 +768,8 @@ h2.title.is-3 {
 		display: inline-flex;
 		flex-direction: column;
 		flex-wrap: wrap;
+		font-size: 90.5%;
+		padding-left: 0px;
 	}
 
 	.section {
@@ -776,6 +778,11 @@ h2.title.is-3 {
 
 	div.card {
 		margin: 20px 0px;
+	}
+
+	p.menu-label.is-centered.rating {
+		margin-left: 2px;
+		padding-left: 2px;
 	}
 }
 
